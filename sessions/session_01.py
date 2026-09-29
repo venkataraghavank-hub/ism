@@ -76,6 +76,9 @@ def go_to(stage: int) -> None:
 def render_session_01() -> None:
     count = len(DECISIONS)
     st.session_state.setdefault("ism_stage", 0)
+    # Widget keys for off-screen questions are pruned by Streamlit. Keep the
+    # student's selections in a separate, non-widget session-state dictionary.
+    st.session_state.setdefault("ism_s1_answers", {})
     stage = min(st.session_state.ism_stage, count)
     st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · INTERACTIVE TUTORIAL</div><h1>Vandelay: manage the IT race</h1><p>Advise Chris Burns. Each short concept prepares you for a management decision; compare options as you go.</p></div>', unsafe_allow_html=True)
     if stage < count:
@@ -83,8 +86,12 @@ def render_session_01() -> None:
         st.progress(stage / count, text=f"Decision {stage + 1} of {count} · {item['block']}")
         with st.container(border=True):
             st.markdown(f'<div class="stage">{esc(item["block"])} · {esc(item["title"])}</div><div class="case"><strong>Before you decide</strong><br>{esc(item["concept"])}</div><div class="compact">VANDELAY SITUATION</div><p>{esc(item["scene"])}</p><div class="prompt">{esc(item["prompt"])}</div>', unsafe_allow_html=True)
-            selection = st.radio("Your call", item["options"], index=None, key=f"ism_s1_choice_{stage}")
+            widget_key = f"ism_s1_choice_{stage}"
+            if widget_key not in st.session_state and stage in st.session_state["ism_s1_answers"]:
+                st.session_state[widget_key] = st.session_state["ism_s1_answers"][stage]
+            selection = st.radio("Your call", item["options"], index=None, key=widget_key)
             if selection is not None:
+                st.session_state["ism_s1_answers"][stage] = selection
                 idx = item["options"].index(selection)
                 st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
                 st.caption("You can choose another option to compare its implications. There are no marks.")
@@ -113,8 +120,12 @@ def render_session_01() -> None:
 
 def render_summary() -> None:
     count = len(DECISIONS)
-    if any(st.session_state.get(f"ism_s1_choice_{i}") is None for i in range(count)):
-        go_to(0)
+    answers = st.session_state.get("ism_s1_answers", {})
+    if any(i not in answers for i in range(count)):
+        st.warning("Some decisions are unfinished. Return to them before viewing your configuration.")
+        if st.button("Return to first unfinished decision"):
+            go_to(next(i for i in range(count) if i not in answers))
+        return
     st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · SUMMARY</div><h1>From technology purchase to business value</h1><p>Your choices show where the manager must look beyond the product.</p></div>', unsafe_allow_html=True)
     with st.container(border=True):
         st.markdown("### What to take into the next session")
@@ -127,7 +138,7 @@ def render_summary() -> None:
 """)
     with st.container(border=True):
         st.markdown("### Your Configuration")
-        picks = [DECISIONS[i]["options"].index(st.session_state[f"ism_s1_choice_{i}"]) for i in range(count)]
+        picks = [DECISIONS[i]["options"].index(answers[i]) for i in range(count)]
         for heading, indices in [
             ("The business problem", (0, 1)), ("The portfolio", (2, 3, 4, 5)),
             ("The three worlds", (6, 7, 8)), ("CCR", (9, 10)),
@@ -155,6 +166,7 @@ def render_summary() -> None:
             go_to(count - 1)
     with b:
         if st.button("Start again", use_container_width=True):
+            st.session_state["ism_s1_answers"] = {}
             for i in range(count):
                 st.session_state.pop(f"ism_s1_choice_{i}", None)
             go_to(0)
