@@ -324,8 +324,6 @@ def _render():
                 idx = item['options'].index(choice)
                 st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
                 st.caption("There are no marks. Choose another option to compare the reasoning.")
-            with st.expander("Source for this decision"):
-                st.caption(item['source'])
         left, right = st.columns(2)
         with left:
             if st.button("Previous", disabled=stage==0, key=f"{PREFIX}_previous", use_container_width=True):
@@ -333,11 +331,21 @@ def _render():
         with right:
             if st.button("View summary" if stage==count-1 else "Continue", disabled=choice is None, key=f"{PREFIX}_next", type="primary", use_container_width=True):
                 _go(stage+1)
-    with st.expander("Concept glossary and reading trail"):
+    with st.expander("Concept map and reading trail"):
+        st.markdown("""
+| Lens | Question | Course reading |
+|---|---|---|
+| Five Forces | How does IT change industry competition and margins? | Tiwana, Chapter 2, Lens 1; Session 3 deck |
+| IT antidotes | How can efficiency, network effects and customization respond to competitive pressure? | Tiwana, Chapter 2; Session 3 deck |
+| Value chain | Where can IT reduce cost, add value or change activities and linkages? | Tiwana, Chapter 2, Lens 2; Session 3 deck |
+| Competitive litmus test (VRIN) | Can an IT asset create and sustain an advantage over rivals? | Tiwana, Chapter 2, Lens 3; Session 3 deck |
+| Organization (VRIO) | Is the firm organized to exploit the resource? | Session 3 deck's VRIO extension |
+| Resources and capabilities | How do resources and complementary arrangements create customer value? | Session 3 deck; Tiwana, Chapter 2 |
+""")
+        st.markdown("**Concept reminders**")
         for term, definition in GLOSSARY.items():
             st.markdown(f"**{term}:** {definition}")
-        st.caption(READING)
-        st.caption("The module paraphrases the assigned material. Example classifications follow the teaching deck; historical examples are not current market claims.")
+        st.caption("The tutorial paraphrases the assigned readings; consult the course copies for the full arguments.")
 
 def render_session_03():
     _render()
