@@ -8,11 +8,13 @@ import os
 import streamlit as st
 
 from sessions.session_01 import render_session_01
+from sessions.session_02 import render_session_02
+from sessions.session_03 import render_session_03
 
 st.set_page_config(page_title="ISM | Manager's Lab", page_icon="🧭", layout="wide", initial_sidebar_state="expanded")
 
 SESSION_NAMES = [
-    "The manager's IT problem", "Session 02", "Session 03", "Session 04", "Session 05",
+    "The manager's IT problem", "IT strategy", "IS as a strategic tool", "Session 04", "Session 05",
     "Session 06", "Session 07", "Session 08", "Session 09", "Session 10",
     "Session 11", "Session 12", "Session 13", "Session 14", "Session 15",
     "Session 16", "Session 17", "Session 18", "Session 19", "Session 20",
@@ -83,7 +85,7 @@ with st.sidebar:
     st.caption("20 sessions · one course app")
     st.markdown("---")
     for number, name in enumerate(SESSION_NAMES, 1):
-        label = f"{number:02d}  {name}" if number == 1 else f"{number:02d}  {name}  ·  Soon"
+        label = f"{number:02d}  {name}" if number <= 3 else f"{number:02d}  {name}  ·  Soon"
         if st.button(label, key=f"nav_{number}", type="primary" if st.session_state.ism_session == number else "secondary", use_container_width=True):
             st.session_state.ism_session = number
             st.rerun()
@@ -95,6 +97,10 @@ with st.sidebar:
 number = st.session_state.ism_session
 if number == 1:
     render_session_01()
+elif number == 2:
+    render_session_02()
+elif number == 3:
+    render_session_03()
 else:
     st.markdown(f'<div class="hero"><div class="eyebrow">SESSION {number:02d}</div><h1>{html.escape(SESSION_NAMES[number-1])}</h1><p>This session’s interactive tutorial will be added here.</p></div>', unsafe_allow_html=True)
     st.info("The course app keeps one repository and one Streamlit URL as new sessions are added.")
