@@ -284,8 +284,6 @@ def _render():
                 idx = item['options'].index(choice)
                 st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
                 st.caption("There are no marks. Choose another option to compare the reasoning.")
-            with st.expander("Source for this decision"):
-                st.caption(item['source'])
         left, right = st.columns(2)
         with left:
             if st.button("Previous", disabled=stage==0, key=f"{PREFIX}_previous", use_container_width=True):
@@ -293,11 +291,18 @@ def _render():
         with right:
             if st.button("View summary" if stage==count-1 else "Continue", disabled=choice is None, key=f"{PREFIX}_next", type="primary", use_container_width=True):
                 _go(stage+1)
-    with st.expander("Concept glossary and reading trail"):
+    with st.expander("Concept map and reading trail"):
+        st.markdown("""\n| Lens | Question | Course reading |
+|---|---|---|
+| Trifecta | How do digitization, infusion and ubiquity change business possibilities? | Tiwana, Chapter 1; Session 2 deck |
+| Digitization cube | What changes in the offering, purchase process and delivery? | Tiwana, Chapter 1, Digitization; Session 2 deck |
+| Strategic aspiration | Whom will the firm serve, and how will it compete? | Tiwana, Chapter 1, Strategic Aspiration; Session 2 deck |
+| Strategy triangle and synchronization | Do organizational and IS choices support the customer promise as conditions change? | Session 2 strategy triangle; Tiwana, Chapter 1, Syncing, Not Alignment |
+| Competitive response | How might imitation and self-disruption affect the chosen position? | Session 2 competitive response discussion; Tiwana, Chapter 1 |\n""")
+        st.markdown("**Concept reminders**")
         for term, definition in GLOSSARY.items():
             st.markdown(f"**{term}:** {definition}")
-        st.caption(READING)
-        st.caption("The module paraphrases the assigned material. Example classifications follow the teaching deck; historical examples are not current market claims.")
+        st.caption("The tutorial paraphrases the assigned readings; consult the course copies for the full arguments.")
 
 def render_session_02():
     _render()
