@@ -80,6 +80,17 @@ RETRY_HINTS = [
 ]
 
 
+STYLE = """
+<style>
+.hero {background:#eef5ff;border-left:5px solid #1761aa;padding:18px 22px;border-radius:8px;margin-bottom:18px;color:#143a60}
+.hero h1 {font-size:1.9rem;margin:4px 0 8px;color:#143a60}
+.eyebrow {font-weight:700;font-size:.82rem;letter-spacing:.06em;color:#1761aa}
+.case {background:#eef5ff;color:#143a60;padding:14px;border-radius:8px;margin:12px 0}
+.debrief {background:#f0f7ff;color:#143a60;padding:14px;border-left:4px solid #1761aa;border-radius:6px;margin-top:14px}
+</style>
+"""
+
+
 def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
@@ -90,13 +101,14 @@ def go_to(stage: int) -> None:
 
 
 def render_session_01() -> None:
+    st.markdown(STYLE, unsafe_allow_html=True)
     count = len(DECISIONS)
     st.session_state.setdefault("ism_stage", 0)
     # Widget keys for off-screen questions are pruned by Streamlit. Keep the
     # student's selections in a separate, non-widget session-state dictionary.
     st.session_state.setdefault("ism_s1_answers", {})
     stage = min(st.session_state.ism_stage, count)
-    st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · INTERACTIVE TUTORIAL</div><h1>Vandelay: manage the IT race</h1><p>Advise Chris Burns. Each short concept prepares you for a management decision; compare options as you go.</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · CONCEPT REVISION</div><h1>Vandelay: manage the IT race</h1><p>Advise Chris Burns. Each short concept prepares you for a management decision; compare options as you go.</p></div>', unsafe_allow_html=True)
     if stage < count:
         item = DECISIONS[stage]
         st.progress(stage / count, text=f"Decision {stage + 1} of {count} · {item['block']}")
