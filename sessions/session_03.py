@@ -236,6 +236,23 @@ DECISIONS = [{'block': 'Three lenses',
   'source': 'Session 3, slides 21, 24, 26; Tiwana, Chapter 2: Competitive Litmus Test; deck’s VRIO '
             'extension.'}]
 
+RETRY_HINTS = [
+    "Match the level of analysis to the question: industry, activities or a particular asset.",
+    "Consider what happens to selling prices and input costs when bargaining power increases.",
+    "Ask whether the alternative meets the same underlying need through a different method.",
+    "Consider both how buyers compare offers and how many alternatives suppliers gain.",
+    "Trace how price comparison affects customers and how renting capacity affects entrants.",
+    "Look for the mechanism that makes a network useful or a tailored system harder to replace.",
+    "Connect the IT proposal to costs and customer benefits within and between activities.",
+    "Ask whether the change happens inside one activity or coordinates two activities.",
+    "Distinguish collecting observations from using insight to change marketing decisions.",
+    "Separate the route to the customer from the physical nature of a printed book.",
+    "Ask what becomes possible when both the product and its delivery can be digital.",
+    "Assess operational value separately from rarity and defensibility.",
+    "Focus on reproducing the benefit of the resource, including alternative ways to achieve it.",
+    "Trace the chain from resources, through coordinated work, to the customer benefit."
+]
+
 STYLE = """
 <style>
 .hero {background:#eef5ff;border-left:5px solid #1761aa;padding:18px 22px;border-radius:8px;margin-bottom:18px;color:#143a60}
@@ -319,17 +336,25 @@ def _render():
             if widget_key not in st.session_state and stored is not None:
                 st.session_state[widget_key] = stored
             choice = st.radio("Your call", item['options'], index=None, key=widget_key)
+            is_correct = False
             if choice is not None:
-                st.session_state[ANSWER_KEY][stage] = choice
                 idx = item['options'].index(choice)
-                st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
-                st.caption("There are no marks. Choose another option to compare the reasoning.")
+                is_correct = idx == item['key']
+                if is_correct:
+                    st.session_state[ANSWER_KEY][stage] = choice
+                    st.success("Correct — " + item['feedback'][idx])
+                    st.caption("You can now continue. There are no marks.")
+                else:
+                    st.session_state[ANSWER_KEY].pop(stage, None)
+                    st.warning("Not quite — " + item['feedback'][idx])
+                    st.info("Hint: " + RETRY_HINTS[stage])
+                    st.caption("Try again: select another answer above.")
         left, right = st.columns(2)
         with left:
             if st.button("Previous", disabled=stage==0, key=f"{PREFIX}_previous", use_container_width=True):
                 _go(stage-1)
         with right:
-            if st.button("View summary" if stage==count-1 else "Continue", disabled=choice is None, key=f"{PREFIX}_next", type="primary", use_container_width=True):
+            if st.button("View summary" if stage==count-1 else "Continue", disabled=not is_correct, key=f"{PREFIX}_next", type="primary", use_container_width=True):
                 _go(stage+1)
     with st.expander("Concept map and reading trail"):
         st.markdown("""
