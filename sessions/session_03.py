@@ -49,47 +49,52 @@ DECISIONS = [{'block': 'Three lenses',
   'source': 'Session 3, slides 3–4, 19–20; Tiwana, Chapter 2: The Three Lenses. Applied situation '
             'is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Growing market, thinner margins',
+  'title': 'More bookings, less profit per booking',
   'concept': 'Stronger forces can lower prices firms receive or raise costs, squeezing industry '
              'margins. Industry growth alone does not establish attractiveness.',
-  'scene': 'An online services industry gains customers quickly. Price comparison makes buyers '
-           'more demanding, while a few essential suppliers increase fees. Analysts call the '
-           'industry attractive because demand is growing.',
-  'prompt': 'Which assessment best applies Five Forces?',
-  'options': ['Growth can coexist with margin pressure if buyers constrain prices and suppliers '
-              'raise costs.',
-              'Growth reduces the importance of buyer and supplier power because revenue will '
-              'rise.',
-              'Supplier fee increases affect individual firms, so they are outside industry '
-              'analysis.'],
-  'feedback': ['Industry attractiveness depends on the ability to retain value, not demand growth '
-               'alone. Buyer and supplier power can squeeze the gap between revenue and cost.',
-               'More customers do not ensure profitable customers. Strong forces can limit margins '
-               'even in a growing market.',
-               'If essential suppliers have bargaining power over industry participants, their '
-               'fees are directly relevant to industry margins.'],
+  'scene': 'Hotels in a town are receiving more bookings. Guests use online comparisons to '
+           'negotiate lower room rates. At the same time, the two firms that provide most hotels '
+           'with laundry services raise their charges. An investor argues that more bookings must '
+           'make the hotel industry more attractive.',
+  'prompt': 'Why might hotel profit margins still fall even as bookings increase?',
+  'options': ['Guests can put downward pressure on room rates, while powerful suppliers raise the '
+              'cost of serving each guest.',
+              'More bookings will necessarily offset lower room rates and higher laundry charges.',
+              'Higher laundry charges matter only for individual hotels, so they should be '
+              'excluded from an industry assessment.'],
+  'feedback': ['Buyer power can limit the price hotels receive, while supplier power can raise '
+               'their costs. More bookings alone do not tell us whether hotels retain more profit '
+               'from each booking.',
+               'Higher volume may help, but does not guarantee better margins. The effect depends '
+               'on prices, costs and the amount of additional business.',
+               'When a small number of suppliers serve much of the industry, their bargaining '
+               'power can affect many hotels. Supplier costs therefore belong in the industry '
+               'assessment.'],
   'key': 0,
   'source': 'Session 3, slides 5–9; Tiwana, Chapter 2: Four Nuances; Five Forces and Margins. '
             'Applied situation is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'A threat before customers switch',
+  'title': 'An alternative can affect prices before it is used',
   'concept': 'A substitute meets the same need differently. The threat of substitutes or new '
              'entrants can constrain prices before entry or switching occurs.',
-  'scene': 'Corporate clients tell a conference organizer that virtual events are an acceptable '
-           'alternative for some meetings. Few have switched yet, but clients use the option when '
-           'negotiating prices.',
-  'prompt': 'What is the strongest interpretation?',
-  'options': ['There is no substitute pressure until clients actually choose virtual events.',
-              'Virtual events are new entrants to the same physical conference business because '
-              'both serve corporate clients.',
-              'An alternative way of meeting the need can constrain prices before switching '
-              'occurs.'],
-  'feedback': ['A credible alternative can affect bargaining and willingness to pay before it '
-               'captures many sales.',
-               'Serving the same need does not make the operating model identical. The scenario '
-               'describes a different way to fulfill the meeting need.',
-               'The threat of substitution can cap prices even while most customers remain. Actual '
-               'switching is not necessary for pressure to arise.'],
+  'scene': 'A company is negotiating airfares for employees attending routine meetings. It tells '
+           'the airline that some meetings could instead be held by video call. Employees still '
+           'take most of their flights, but the company uses this alternative to request lower '
+           'fares.',
+  'prompt': 'How can video meetings affect the airline even before many flights are cancelled?',
+  'options': ['They cannot affect the airline until employees actually stop flying.',
+              'They affect the airline only if the video-meeting provider starts operating flights '
+              'itself.',
+              'They offer another way to meet the business need, which can limit the fare the '
+              'company is willing to pay.'],
+  'feedback': ['A credible alternative can influence a customer’s willingness to pay before the '
+               'customer switches. Actual cancellation is not required for pricing pressure.',
+               'A substitute meets the underlying need differently. The provider does not need to '
+               'become another airline: video meetings can replace some travel needed for '
+               'communication.',
+               'For these routine meetings, the need is communication with colleagues, rather than '
+               'flying itself. Video calls offer a different way to meet that need and can '
+               'constrain acceptable fares.'],
   'key': 2,
   'source': 'Session 3, slides 5, 8–9; Tiwana, Chapter 2: Four Nuances. Applied situation is '
             'illustrative.'},
@@ -137,48 +142,50 @@ DECISIONS = [{'block': 'Three lenses',
   'source': 'Session 3, slides 8–9; Tiwana, Chapter 2: How IT Alters the Five Forces. Applied '
             'situation is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Size is not enough for a network barrier',
+  'title': 'Many accounts or a useful network?',
   'concept': 'Operational efficiency can protect margins. Network effects and deep customization '
              'can erect unconventional competitive barriers.',
-  'scene': 'A professional marketplace has many registered accounts but little useful interaction. '
-           'A smaller rival has fewer accounts and more active matching between buyers and '
-           'experts.',
-  'prompt': 'What evidence best tests whether the larger marketplace has an unconventional '
-            'barrier?',
-  'options': ['The total number of accounts exceeds the rival’s, demonstrating stronger network '
-              'effects.',
-              'It has invested more in servers, demonstrating that matching will become valuable.',
-              'Useful participation increases member value and is difficult for a rival to '
-              'recreate or replace.'],
-  'feedback': ['Registered accounts need not create useful connections. Network effects depend on '
-               'the value participation adds, not headcount alone.',
-               'Infrastructure spending can support operations but does not establish useful '
-               'participation or a competitive barrier.',
-               'A network barrier comes from the value of interaction and the difficulty of '
-               'assembling or replacing that useful network. Scale without activity is '
-               'insufficient.'],
+  'scene': 'A tutoring marketplace has thousands of registered tutors, but most are inactive. A '
+           'smaller rival has active tutors who cover many subjects and respond promptly. Students '
+           'find suitable tutors more easily on the smaller platform.',
+  'prompt': 'What would best show that a tutoring marketplace’s network makes it difficult for a '
+            'new rival to compete?',
+  'options': ['It has more registered tutor accounts, whether or not those tutors respond to '
+              'students.',
+              'It has spent more on its website than other tutoring marketplaces.',
+              'More active, relevant tutors improve students’ chances of finding a suitable match, '
+              'and a new rival would struggle to assemble an equally useful network.'],
+  'feedback': ['Inactive accounts do not necessarily improve matching. A large registration count '
+               'alone is not evidence of a useful network effect or an entry barrier.',
+               'Website investment may improve the service, but spending alone does not establish '
+               'that participants create value for one another.',
+               'The network matters when useful participation improves the service for other '
+               'users. If a rival cannot readily assemble comparable participation, that network '
+               'can make entry harder.'],
   'key': 2,
   'source': 'Session 3, slides 8–9, 25; Tiwana, Chapter 2: IT Antidotes. Applied situation is '
             'illustrative.'},
  {'block': 'Value chain',
-  'title': 'Local savings, system cost',
+  'title': 'Cheaper dispatch, slower replenishment',
   'concept': 'A value chain explains how activities turn inputs into outputs worth more to '
              'customers. Activities may cut across departments and contain physical and '
              'informational components.',
-  'scene': 'A manufacturer automates packing and lowers warehouse labor costs. Packages now arrive '
-           'in larger batches, increasing delivery delays and retailers’ stockouts.',
-  'prompt': 'How should a value-chain analysis evaluate the change?',
-  'options': ['Approve it on the warehouse savings because each activity should optimize its own '
-              'cost.',
-              'Assess costs and customer value across packing, delivery and replenishment linkages '
-              'before judging the gain.',
-              'Treat downstream delays only as the transport department’s performance problem.'],
-  'feedback': ['A local gain can create larger costs or value losses elsewhere. Activity '
-               'optimization does not automatically optimize the chain.',
-               'The value chain connects activities. The relevant result includes downstream '
-               'coordination and the value customers receive.',
-               'The packing change alters downstream work. Department boundaries should not hide '
-               'those linkages.'],
+  'scene': 'A manufacturer cuts dispatch costs by sending goods only when it can fill a truck. '
+           'Retailers now wait longer for deliveries and sometimes run out of stock. The dispatch '
+           'manager calls the change a success because transport cost per unit has fallen.',
+  'prompt': 'How should a value-chain analysis judge whether this change is beneficial overall?',
+  'options': ['Use the lower transport cost per unit as sufficient evidence of success.',
+              'Compare the transport savings with the effects on delivery times, retailers’ stock '
+              'availability and customer service.',
+              'Leave stockouts out of the assessment because they occur at retailers rather than '
+              'at the manufacturer.'],
+  'feedback': ['The transport saving is real, but it is only one effect. Longer waits and lost '
+               'sales or poorer service elsewhere may offset the saving.',
+               'Activities are linked: the dispatch schedule affects retail replenishment and '
+               'customer availability. The overall assessment must consider both the saving and '
+               'these downstream effects.',
+               'Value-chain linkages can cross firm boundaries. Retail stockouts can affect sales '
+               'and the value of the manufacturer’s offering, so they cannot simply be excluded.'],
   'key': 1,
   'source': 'Session 3, slides 10–13; Tiwana, Chapter 2: Lens 2: Value Chains. Applied situation '
             'is illustrative.'},
@@ -249,25 +256,29 @@ DECISIONS = [{'block': 'Three lenses',
   'source': 'Session 3, slides 15–17; Tiwana, Chapter 2: Value Chain Reconfiguration. Applied '
             'situation is illustrative.'},
  {'block': 'Value chain',
-  'title': 'Digital delivery, optional intermediaries',
+  'title': 'Music downloads and the changing distribution chain',
   'concept': 'Digitizing the offering enables digital delivery and can permit further changes in '
              'the value stream.',
-  'scene': 'An author can sell an e-book directly through a platform. A publisher offers editing, '
-           'promotion and rights management. Managers argue that digital delivery makes every '
-           'publisher unnecessary.',
-  'prompt': 'Which conclusion is supported?',
-  'options': ['Digital offerings can enable fewer intermediary layers, but an intermediary may '
-              'remain if its activities add value.',
-              'Publishers must remain because the activities in a traditional printed-book chain '
-              'cannot change.',
-              'Publishers must disappear because eliminating physical delivery eliminates all '
-              'their activities.'],
-  'feedback': ['Digitization enables reconfiguration without predetermining one universal chain. '
-               'Editing, discovery and other services may still justify an intermediary.',
-               'Digital creation and delivery can change which layers are needed and how '
-               'activities are organized. Tradition alone does not justify the existing chain.',
-               'Physical distribution is only one possible activity. Nonphysical services can '
-               'still add value.'],
+  'scene': 'An independent musician replaces CDs sold through distributors and shops with music '
+           'files sold through a download platform. The platform delivers the files online. The '
+           'musician still pays a specialist agency to promote the music and help listeners '
+           'discover it.',
+  'prompt': 'What does this example show about digitization and intermediaries?',
+  'options': ['Digital music delivery can remove physical distribution stages, while promotion '
+              'intermediaries may remain if they add value.',
+              'The download platform changes only the purchase process; the music still needs the '
+              'same physical distribution stages as a CD.',
+              'Once delivery is digital, retaining any promotion intermediary means the '
+              'distribution model has failed.'],
+  'feedback': ['Digitizing the offering allows delivery without manufacturing and moving CDs. It '
+               'does not eliminate the need to reach listeners; an agency may still create value '
+               'through promotion and discovery.',
+               'In this scenario, both the offering and its delivery are digital. CD '
+               'manufacturing, transport and shop handling are no longer required for these '
+               'downloads.',
+               'Digital delivery removes certain physical activities, not every activity in the '
+               'value chain. An intermediary can still be worthwhile if its contribution justifies '
+               'its cost.'],
   'key': 0,
   'source': 'Session 3, slides 18; Tiwana, Chapter 2: Value Chain Reconfiguration. Applied '
             'situation is illustrative.'},
@@ -339,18 +350,21 @@ DECISIONS = [{'block': 'Three lenses',
             'extension. Applied situation is illustrative.'}]
 
 RETRY_HINTS = ['Separate the industry question, the activity question and the resource question.',
- 'Examine what firms can charge and what they must pay, rather than market size alone.',
- 'Ask whether the alternative meets the underlying need differently and how its availability '
- 'affects negotiations.',
+ 'Consider both sides of each booking: what the hotel receives from the guest and what it pays to '
+ 'provide the stay.',
+ 'Ask what the company needs the trip to accomplish, and whether it can accomplish that purpose '
+ 'another way.',
  'Consider whose alternatives improve under each platform feature.',
  'Identify who gains negotiating alternatives and which investment a new entrant can avoid.',
- 'Look for value gained from other participants and whether an alternative network can offer '
- 'equivalent value.',
- 'Follow the effect of one activity’s change on later activities and the customer outcome.',
+ 'Focus on the value active tutors create for students, and what a new rival would need to '
+ 'reproduce that value.',
+ 'Follow the change from dispatch to the retailer’s shelves. Which costs or customer outcomes '
+ 'improve, and which worsen?',
  'Distinguish doing one step better from changing how several steps are coordinated.',
  'Trace how information changes whom marketing serves and what it offers them.',
  'Ask which activities disappear and which must still be performed by someone.',
- 'Separate physical distribution from the other functions an intermediary may perform.',
+ 'Separate the work of physically moving CDs from the work of helping listeners discover the '
+ 'music.',
  'Distinguish business value, competitive parity and sustained advantage.',
  'Separate reproducing the same asset from achieving the same outcome by another route.',
  'Trace the chain from resources through coordinated work to the customer result, and distinguish '
@@ -481,4 +495,5 @@ def render_session_03():
 if __name__ == "__main__":
     st.set_page_config(page_title="ISM LAB · Session 3", page_icon="📘", layout="wide")
     render_session_03()
+
 
