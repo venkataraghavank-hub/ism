@@ -7,8 +7,8 @@ PREFIX = 'ism_s3'
 STAGE_KEY = 'ism_s3_stage'
 ANSWER_KEY = 'ism_s3_answers'
 TITLE = 'Information systems as a strategic tool'
-INTRO = ('Examine industry forces, changes in value-chain activities, and the defensibility of IT resources using '
- 'the session’s examples.')
+INTRO = ('Apply the three strategic lenses to varied business situations. Trace competitive mechanisms, '
+ 'activity linkages and the conditions for sustained advantage.')
 SUMMARY_TITLE = 'Your Three-Lens Review'
 TAKEAWAYS = ['The three lenses address industry, firm activities and individual IT assets.',
  'Industry forces affect margins; IT can strengthen or weaken forces through different mechanisms.',
@@ -26,232 +26,335 @@ GLOSSARY = {'Five Forces': 'Industry rivalry, buyer power, supplier power, threa
 READING = ('Primary sources: Session 3 teaching deck and Amrit Tiwana, IT Strategy for Non-IT Managers, Chapter 2. The '
  'deck adds VRIO and the illustrative Amazon book and Amazon Fresh exercises.')
 DECISIONS = [{'block': 'Three lenses',
-  'title': 'Choose the level',
-  'concept': 'Five Forces examines the industry; the value chain examines firm activities relative to '
-             'rivals; the litmus test examines an individual IT asset.',
-  'scene': 'You want to know whether proprietary customer data can sustain an advantage.',
-  'prompt': 'Which lens directly addresses this question?',
-  'options': ['Five Forces alone', 'The competitive litmus test', 'The value chain alone'],
-  'feedback': ['Five Forces explains industry pressures, not the defensibility of this particular asset.',
-               'The litmus test examines value, rarity, imitation and substitutes for the asset.',
-               'The value chain locates value creation, but does not by itself test sustainability.'],
+  'title': 'Which question needs which lens?',
+  'concept': 'Five Forces examines the industry; the value chain examines firm activities relative '
+             'to rivals; the litmus test examines an individual IT asset.',
+  'scene': 'A retailer faces sector-wide price pressure, slow replenishment and a proprietary '
+           'demand dataset. Its CEO proposes using one framework to decide whether the dataset can '
+           'sustain an advantage.',
+  'prompt': 'Which approach best matches the distinct questions?',
+  'options': ['Use Five Forces to establish that any proprietary dataset is defensible in a '
+              'difficult industry.',
+              'Use the litmus test for the dataset’s defensibility, the value chain for '
+              'replenishment and Five Forces for industry pressure.',
+              'Use the value chain to determine whether the entire industry has attractive '
+              'margins.'],
+  'feedback': ['Industry pressure does not establish whether this particular resource is valuable, '
+               'rare or hard to imitate or substitute.',
+               'The lenses examine different levels: industry conditions, activities and linkages, '
+               'and individual resources. They complement one another.',
+               'The value chain helps analyze activities within and across firms. Industry '
+               'attractiveness requires examining industry forces.'],
   'key': 1,
-  'source': 'Session 3, slides 3–4, 19–20; Tiwana, Chapter 2: The Three Lenses.'},
+  'source': 'Session 3, slides 3–4, 19–20; Tiwana, Chapter 2: The Three Lenses. Applied situation '
+            'is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Forces and margins',
-  'concept': 'Stronger forces can lower prices firms receive or raise costs, squeezing industry margins. '
-             'Industry growth alone does not establish attractiveness.',
-  'scene': 'Customers gain negotiating clout while suppliers raise input prices.',
-  'prompt': 'What is the likely pressure?',
-  'options': ['Industry margins are squeezed',
-              'Margins must rise because transactions are digital',
-              'Only one firm is affected by industry forces'],
-  'feedback': ['Buyer and supplier power can both erode the margins of firms in an industry.',
-               'Digital transactions do not remove bargaining power.',
-               'Five Forces concerns industry conditions, though firms can respond differently.'],
+  'title': 'Growing market, thinner margins',
+  'concept': 'Stronger forces can lower prices firms receive or raise costs, squeezing industry '
+             'margins. Industry growth alone does not establish attractiveness.',
+  'scene': 'An online services industry gains customers quickly. Price comparison makes buyers '
+           'more demanding, while a few essential suppliers increase fees. Analysts call the '
+           'industry attractive because demand is growing.',
+  'prompt': 'Which assessment best applies Five Forces?',
+  'options': ['Growth can coexist with margin pressure if buyers constrain prices and suppliers '
+              'raise costs.',
+              'Growth reduces the importance of buyer and supplier power because revenue will '
+              'rise.',
+              'Supplier fee increases affect individual firms, so they are outside industry '
+              'analysis.'],
+  'feedback': ['Industry attractiveness depends on the ability to retain value, not demand growth '
+               'alone. Buyer and supplier power can squeeze the gap between revenue and cost.',
+               'More customers do not ensure profitable customers. Strong forces can limit margins '
+               'even in a growing market.',
+               'If essential suppliers have bargaining power over industry participants, their '
+               'fees are directly relevant to industry margins.'],
   'key': 0,
-  'source': 'Session 3, slides 5–9; Tiwana, Chapter 2: Four Nuances; Five Forces and Margins.'},
+  'source': 'Session 3, slides 5–9; Tiwana, Chapter 2: Four Nuances; Five Forces and Margins. '
+            'Applied situation is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Substitutes and entry threats',
-  'concept': 'A substitute meets the same need differently. The threat of substitutes or new entrants can '
-             'constrain prices before entry or switching occurs.',
-  'scene': 'The deck uses Zoom as an alternative to some business travel.',
-  'prompt': 'Why can this matter to travel providers?',
-  'options': ['Only an actual airline entrant matters',
-              'Zoom is an airline rival using the same activity system',
-              'An alternative way to meet the need can cap prices'],
-  'feedback': ['Substitutes can affect profitability without entering as another airline.',
-               'The mechanism is a different way to meet some communication needs.',
-               'The substitute threat can constrain what travel providers charge, even before every buyer '
-               'switches.'],
+  'title': 'A threat before customers switch',
+  'concept': 'A substitute meets the same need differently. The threat of substitutes or new '
+             'entrants can constrain prices before entry or switching occurs.',
+  'scene': 'Corporate clients tell a conference organizer that virtual events are an acceptable '
+           'alternative for some meetings. Few have switched yet, but clients use the option when '
+           'negotiating prices.',
+  'prompt': 'What is the strongest interpretation?',
+  'options': ['There is no substitute pressure until clients actually choose virtual events.',
+              'Virtual events are new entrants to the same physical conference business because '
+              'both serve corporate clients.',
+              'An alternative way of meeting the need can constrain prices before switching '
+              'occurs.'],
+  'feedback': ['A credible alternative can affect bargaining and willingness to pay before it '
+               'captures many sales.',
+               'Serving the same need does not make the operating model identical. The scenario '
+               'describes a different way to fulfill the meeting need.',
+               'The threat of substitution can cap prices even while most customers remain. Actual '
+               'switching is not necessary for pressure to arise.'],
   'key': 2,
-  'source': 'Session 3, slides 5, 8–9; Tiwana, Chapter 2: Four Nuances.'},
+  'source': 'Session 3, slides 5, 8–9; Tiwana, Chapter 2: Four Nuances. Applied situation is '
+            'illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Supplier power: two mechanisms',
-  'concept': 'Transparency can improve comparison of suppliers; wider access to buyers can increase '
-             'suppliers’ options. Effects depend on the mechanism.',
-  'scene': 'An online procurement market displays offers and connects suppliers to more buyers.',
-  'prompt': 'Which interpretation matches the book and deck?',
-  'options': ['IT always weakens supplier power',
-              'Comparison can weaken supplier power; wider buyer access can strengthen it',
-              'Only customer power can change'],
-  'feedback': ['The same technology can create opposing mechanisms.',
-               'Comparison increases buyer leverage, while access to more buyers can improve supplier '
-               'alternatives.',
-               'Both supplier and customer bargaining power can change.'],
+  'title': 'Supplier power can move both ways',
+  'concept': 'Transparency can improve comparison of suppliers; wider access to buyers can '
+             'increase suppliers’ options. Effects depend on the mechanism.',
+  'scene': 'A procurement platform makes suppliers’ prices easy to compare. It also gives those '
+           'suppliers access to buyers beyond their previous local customers.',
+  'prompt': 'What should the purchasing manager conclude?',
+  'options': ['The platform necessarily weakens suppliers because buyers can compare quotes.',
+              'Comparison may weaken supplier power, while wider access to buyers may strengthen '
+              'it; assess both mechanisms.',
+              'The platform necessarily strengthens suppliers because their potential market '
+              'grows.'],
+  'feedback': ['Comparison supports buyers, but suppliers’ additional alternatives can offset that '
+               'effect.',
+               'Transparency and wider market access pull in different directions. Their net '
+               'effect depends on alternatives, differentiation and the actual trading situation.',
+               'More alternatives can strengthen suppliers, but improved buyer comparison also '
+               'matters. Market growth alone does not settle bargaining power.'],
   'key': 1,
-  'source': 'Session 3, slides 8–9; Tiwana, Chapter 2: How IT Alters the Five Forces.'},
+  'source': 'Session 3, slides 8–9; Tiwana, Chapter 2: How IT Alters the Five Forces. Applied '
+            'situation is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'Buyer power and entry',
+  'title': 'A better customer offer, a harder industry',
   'concept': 'IT can increase price transparency and let entrants rent capacity instead of owning '
              'traditional infrastructure.',
-  'scene': 'The deck uses Google Flights for comparisons and AWS for rented IT capacity.',
-  'prompt': 'Which pair of effects fits these illustrations?',
-  'options': ['More buyer power; lower IT entry hurdles',
-              'Less buyer power; entrants must own every server',
-              'Both automatically create durable advantage for incumbents'],
-  'feedback': ['Comparison expands buyer choice; rented capacity reduces an entrant’s initial IT '
-               'requirements.',
-               'These mechanisms move in the opposite directions in the illustrations.',
-               'These can increase competitive pressure rather than protect existing firms.'],
+  'scene': 'An industry adopts price-comparison tools and inexpensive rented computing. Customers '
+           'compare offers more easily, and new firms need less upfront IT investment.',
+  'prompt': 'Which interpretation best distinguishes the two effects?',
+  'options': ['Buyer power can increase while IT-related entry barriers fall, without eliminating '
+              'other entry requirements.',
+              'Comparison primarily changes supplier power, while rented computing makes buyers '
+              'less price-sensitive.',
+              'Both changes mainly improve incumbent efficiency, so they necessarily increase '
+              'industry margins.'],
+  'feedback': ['Transparency improves buyer choice; rented capacity can reduce one entry hurdle. '
+               'Regulation, expertise and other barriers may still remain.',
+               'The described comparisons concern customers choosing providers. Rented computing '
+               'concerns entrants’ capacity costs, not buyer price sensitivity.',
+               'Incumbents can benefit too, but greater buyer power and easier entry can intensify '
+               'pressure on margins.'],
   'key': 0,
-  'source': 'Session 3, slides 8–9; Tiwana, Chapter 2: How IT Alters the Five Forces.'},
+  'source': 'Session 3, slides 8–9; Tiwana, Chapter 2: How IT Alters the Five Forces. Applied '
+            'situation is illustrative.'},
  {'block': 'Industry forces',
-  'title': 'IT antidotes',
-  'concept': 'Operational efficiency can protect margins. Network effects and deep customization can erect '
-             'unconventional competitive barriers.',
-  'scene': 'A platform grows more useful through participation; a business system becomes deeply tailored to '
-           'customer work.',
-  'prompt': 'What should a manager examine?',
-  'options': ['Whether buying identical software guarantees the same barrier',
-              'Whether every customer is permanently locked in',
-              'How useful participation or customization makes entry or switching harder'],
-  'feedback': ['The barrier depends on the network or customization, not simply the purchased software.',
-               'These effects can be overcome; permanence should not be assumed.',
-               'These are the mechanisms behind the network-effect and customization examples.'],
+  'title': 'Size is not enough for a network barrier',
+  'concept': 'Operational efficiency can protect margins. Network effects and deep customization '
+             'can erect unconventional competitive barriers.',
+  'scene': 'A professional marketplace has many registered accounts but little useful interaction. '
+           'A smaller rival has fewer accounts and more active matching between buyers and '
+           'experts.',
+  'prompt': 'What evidence best tests whether the larger marketplace has an unconventional '
+            'barrier?',
+  'options': ['The total number of accounts exceeds the rival’s, demonstrating stronger network '
+              'effects.',
+              'It has invested more in servers, demonstrating that matching will become valuable.',
+              'Useful participation increases member value and is difficult for a rival to '
+              'recreate or replace.'],
+  'feedback': ['Registered accounts need not create useful connections. Network effects depend on '
+               'the value participation adds, not headcount alone.',
+               'Infrastructure spending can support operations but does not establish useful '
+               'participation or a competitive barrier.',
+               'A network barrier comes from the value of interaction and the difficulty of '
+               'assembling or replacing that useful network. Scale without activity is '
+               'insufficient.'],
   'key': 2,
-  'source': 'Session 3, slides 8–9, 25; Tiwana, Chapter 2: IT Antidotes.'},
+  'source': 'Session 3, slides 8–9, 25; Tiwana, Chapter 2: IT Antidotes. Applied situation is '
+            'illustrative.'},
  {'block': 'Value chain',
-  'title': 'Activities and value',
-  'concept': 'A value chain explains how activities turn inputs into outputs worth more to customers. '
-             'Activities may cut across departments and contain physical and informational components.',
-  'scene': 'Vandelay considers changes to operations and after-sales service.',
-  'prompt': 'How should managers evaluate a proposed IT change?',
-  'options': ['Only by which department owns the software',
-              'By how it lowers cost or increases customer value in activities and linkages',
-              'Only by the number of automated tasks'],
-  'feedback': ['Department ownership does not establish value creation.',
-               'This connects the proposal to the firm’s activities and customer promise.',
-               'Automation matters when it changes cost or value; a task count alone is insufficient.'],
+  'title': 'Local savings, system cost',
+  'concept': 'A value chain explains how activities turn inputs into outputs worth more to '
+             'customers. Activities may cut across departments and contain physical and '
+             'informational components.',
+  'scene': 'A manufacturer automates packing and lowers warehouse labor costs. Packages now arrive '
+           'in larger batches, increasing delivery delays and retailers’ stockouts.',
+  'prompt': 'How should a value-chain analysis evaluate the change?',
+  'options': ['Approve it on the warehouse savings because each activity should optimize its own '
+              'cost.',
+              'Assess costs and customer value across packing, delivery and replenishment linkages '
+              'before judging the gain.',
+              'Treat downstream delays only as the transport department’s performance problem.'],
+  'feedback': ['A local gain can create larger costs or value losses elsewhere. Activity '
+               'optimization does not automatically optimize the chain.',
+               'The value chain connects activities. The relevant result includes downstream '
+               'coordination and the value customers receive.',
+               'The packing change alters downstream work. Department boundaries should not hide '
+               'those linkages.'],
   'key': 1,
-  'source': 'Session 3, slides 10–13; Tiwana, Chapter 2: Lens 2: Value Chains.'},
+  'source': 'Session 3, slides 10–13; Tiwana, Chapter 2: Lens 2: Value Chains. Applied situation '
+            'is illustrative.'},
  {'block': 'Value chain',
-  'title': 'Steps versus linkages',
-  'concept': 'IT can improve one activity or change coordination and structure between activities, including '
-             'across firms.',
-  'scene': 'Compare faster processing within a warehouse with sharing demand data between retail and '
-           'production.',
-  'prompt': 'Which distinction is appropriate?',
-  'options': ['First improves a step; second improves a linkage',
-              'Both are only changes in marketing',
-              'Neither can affect costs'],
-  'feedback': ['One improves work inside an activity; the other connects activities so decisions can be '
-               'coordinated.',
-               'Warehouse processing and demand-production coordination span different activities.',
-               'Both can affect cost and value through different mechanisms.'],
+  'title': 'A faster step or a better linkage?',
+  'concept': 'IT can improve one activity or change coordination and structure between activities, '
+             'including across firms.',
+  'scene': 'A retailer considers two changes: faster item picking within its warehouse and sharing '
+           'store demand signals with suppliers to schedule replenishment.',
+  'prompt': 'Which comparison best identifies the source of improvement?',
+  'options': ['Faster picking improves an activity; shared demand signals improve coordination '
+              'between activities and firms.',
+              'Both are activity-level improvements because each uses warehouse data.',
+              'Shared signals change only the purchasing activity because the retailer sends the '
+              'message.'],
+  'feedback': ['One changes performance inside a step; the other changes how activities connect. '
+               'Both may affect cost and service.',
+               'Using the same data does not make the mechanism the same. Shared signals can '
+               'change coordination across organizational boundaries.',
+               'The message affects supplier planning and replenishment as well as purchasing. Its '
+               'value lies partly in those linkages.'],
   'key': 0,
-  'source': 'Session 3, slides 11–13; Tiwana, Chapter 2: Transforming Value Chains with IT.'},
+  'source': 'Session 3, slides 11–13; Tiwana, Chapter 2: Transforming Value Chains with IT. '
+            'Applied situation is illustrative.'},
  {'block': 'Value chain',
-  'title': 'Harrah’s customer insight',
-  'concept': 'Commodity technology can create value when combined with proprietary customer knowledge and '
-             'changed decisions.',
-  'scene': 'In Tiwana’s casino example, loyalty information challenged the focus on wealthy gamblers and '
-           'informed customized incentives.',
-  'prompt': 'What explains the strategic value?',
-  'options': ['The loyalty card alone guarantees an advantage',
-              'Every casino must target wealthy gamblers',
-              'Customer insight changed whom marketing served and how incentives were allocated'],
-  'feedback': ['The card collected observations; analytical insight and changed decisions made them useful.',
-               'The example challenges that industry assumption using customer evidence.',
-               'The contribution was the combination of data, analysis and marketing decisions.'],
+  'title': 'A loyalty database that changes nothing',
+  'concept': 'Commodity technology can create value when combined with proprietary customer '
+             'knowledge and changed decisions.',
+  'scene': 'A hotel chain builds rich guest histories. Marketing still sends the same discount to '
+           'every guest. Management claims it has reproduced the strategic logic of Tiwana’s '
+           'casino example.',
+  'prompt': 'What is missing from that claim?',
+  'options': ['A larger database is needed before customer knowledge can affect decisions.',
+              'A distinctive loyalty card design is needed to turn the common system into '
+              'strategic IT.',
+              'Customer insights must change targeting and incentives in ways that improve value, '
+              'rather than merely accumulate records.'],
+  'feedback': ['More records may help, but the stated gap is that decisions do not use the '
+               'insights already available.',
+               'Card design does not establish the decision changes responsible for the example’s '
+               'value.',
+               'In the casino example, insights challenged assumptions about valuable customers '
+               'and changed marketing choices. Capturing history alone does not reproduce that '
+               'logic.'],
   'key': 2,
-  'source': 'Session 3, slides 14; Tiwana, Chapter 2: Value-Adding Applications: Casino Example.'},
+  'source': 'Session 3, slides 14; Tiwana, Chapter 2: Value-Adding Applications: Casino Example. '
+            'Applied situation is illustrative.'},
  {'block': 'Value chain',
-  'title': 'Amazon: printed books',
-  'concept': 'Digital purchasing can reconfigure intermediary linkages while the offering and delivery '
-             'remain physical.',
-  'scene': 'The deck compares the traditional chain with an illustrative author–publisher–Amazon–consumer '
-           'chain.',
-  'prompt': 'What does this show?',
-  'options': ['Printed books can always be delivered as bits',
-              'Intermediary layers can change while physical fulfillment remains',
-              'The slide allocations prove actual Amazon profit margins'],
-  'feedback': ['A printed book still requires physical delivery.',
-               'This illustrates structural reconfiguration and disintermediation in the distribution chain.',
-               'The dollar allocations are teaching illustrations, not actual Amazon economics.'],
+  'title': 'An intermediary disappears; its work remains',
+  'concept': 'Digital purchasing can reconfigure intermediary linkages while the offering and '
+             'delivery remain physical.',
+  'scene': 'A printed-book seller moves online and removes a wholesaler from its distribution '
+           'route. It still needs storage, order fulfillment and returns handling.',
+  'prompt': 'Which assessment best applies value-chain reconfiguration?',
+  'options': ['Removing the wholesaler means its former share of revenue becomes the seller’s '
+              'profit.',
+              'An intermediary layer can disappear while its necessary activities move elsewhere, '
+              'so net value depends on the new costs and linkages.',
+              'Digital purchasing means the printed book no longer requires a physical supply '
+              'chain.'],
+  'feedback': ['The seller or another party may now perform costly activities previously handled '
+               'by the wholesaler. Removed revenue shares are not automatically profit.',
+               'Disintermediation changes who performs activities and how they connect. Physical '
+               'fulfillment and transferred responsibilities still need evaluation.',
+               'The buying process is digital, but the printed offering and delivery remain '
+               'physical. Online ordering does not eliminate logistics.'],
   'key': 1,
-  'source': 'Session 3, slides 15–17; Tiwana, Chapter 2: Value Chain Reconfiguration.'},
+  'source': 'Session 3, slides 15–17; Tiwana, Chapter 2: Value Chain Reconfiguration. Applied '
+            'situation is illustrative.'},
  {'block': 'Value chain',
-  'title': 'Amazon: e-books',
-  'concept': 'Digitizing the offering enables digital delivery and can permit further changes in the value '
-             'stream.',
-  'scene': 'The deck then shows an illustrative author–Amazon–consumer e-book chain.',
+  'title': 'Digital delivery, optional intermediaries',
+  'concept': 'Digitizing the offering enables digital delivery and can permit further changes in '
+             'the value stream.',
+  'scene': 'An author can sell an e-book directly through a platform. A publisher offers editing, '
+           'promotion and rights management. Managers argue that digital delivery makes every '
+           'publisher unnecessary.',
   'prompt': 'Which conclusion is supported?',
-  'options': ['Product digitization can enable further disintermediation',
-              'Publishers must disappear from every e-book business',
-              'An e-book always has the exact price shown in the slide'],
-  'feedback': ['The example illustrates a possible reconfiguration, not a universal industry arrangement.',
-               'The teaching scenario does not show that every publisher becomes unnecessary.',
-               'The prices and allocations are illustrative.'],
+  'options': ['Digital offerings can enable fewer intermediary layers, but an intermediary may '
+              'remain if its activities add value.',
+              'Publishers must remain because the activities in a traditional printed-book chain '
+              'cannot change.',
+              'Publishers must disappear because eliminating physical delivery eliminates all '
+              'their activities.'],
+  'feedback': ['Digitization enables reconfiguration without predetermining one universal chain. '
+               'Editing, discovery and other services may still justify an intermediary.',
+               'Digital creation and delivery can change which layers are needed and how '
+               'activities are organized. Tradition alone does not justify the existing chain.',
+               'Physical distribution is only one possible activity. Nonphysical services can '
+               'still add value.'],
   'key': 0,
-  'source': 'Session 3, slides 18; Tiwana, Chapter 2: Value Chain Reconfiguration.'},
+  'source': 'Session 3, slides 18; Tiwana, Chapter 2: Value Chain Reconfiguration. Applied '
+            'situation is illustrative.'},
  {'block': 'Resource advantage',
-  'title': 'The competitive litmus test',
-  'concept': 'Valuable and rare assets may create advantage. Costly imitation and lack of equivalent '
-             'substitutes help sustain it. Valuable common assets can support parity.',
-  'scene': 'A reliable standard application is available to all major rivals.',
-  'prompt': 'How should it be described?',
-  'options': ['Useless because competitors can buy it',
-              'Sustainable advantage solely because it is expensive',
-              'Potentially valuable for operations, but not rare on this evidence'],
-  'feedback': ['Competitive necessities can have substantial operational value.',
-               'Purchase cost does not establish rarity, imitation barriers or non-substitutability.',
-               'Value does not by itself demonstrate a competitive advantage over rivals.'],
+  'title': 'Necessary and valuable, but common',
+  'concept': 'Valuable and rare assets may create advantage. Costly imitation and lack of '
+             'equivalent substitutes help sustain it. Valuable common assets can support parity.',
+  'scene': 'A bank’s standard transaction platform improves reliability. All major rivals can '
+           'purchase comparable systems. The CFO says it either creates sustained advantage or '
+           'should be removed.',
+  'prompt': 'Which response best applies the competitive litmus test?',
+  'options': ['Keep it because any costly, reliable system establishes a sustained advantage.',
+              'Remove it because a resource that rivals can buy cannot create business value.',
+              'It may be essential for parity and operations, while its availability to rivals '
+              'means the evidence does not establish rarity.'],
+  'feedback': ['Cost and reliability can establish usefulness, but do not establish rarity, costly '
+               'imitation or lack of substitutes.',
+               'Common resources can create operational value and be necessary to compete. Absence '
+               'of advantage does not mean absence of value.',
+               'The resource can be valuable without being rare. Sustained advantage requires '
+               'further conditions beyond usefulness.'],
   'key': 2,
-  'source': 'Session 3, slides 20, 23; Tiwana, Chapter 2: Lens 3: Competitive Litmus Test.'},
+  'source': 'Session 3, slides 20, 23; Tiwana, Chapter 2: Lens 3: Competitive Litmus Test. Applied '
+            'situation is illustrative.'},
  {'block': 'Resource advantage',
-  'title': 'Custom apps, data and networks',
-  'concept': 'Custom construction alone does not satisfy the litmus test. Proprietary data and useful '
-             'networks may be harder to reproduce, but must still be assessed.',
-  'scene': 'Compare a copyable custom feature with Netflix viewing insights and LinkedIn’s useful '
-           'participation.',
-  'prompt': 'Which question is most useful?',
-  'options': ['Was the application written from scratch?',
-              'Can rivals reproduce the useful data or network, or achieve equivalent value another way?',
-              'Does the database contain a large number of rows?'],
-  'feedback': ['Custom development is a construction choice, not proof of sustainable advantage.',
-               'This tests imitation and strategic substitutes for the value-producing resource and '
-               'capability.',
-               'Volume alone does not establish valuable, rare or defensible insight.'],
+  'title': 'Different resource, equivalent result',
+  'concept': 'Custom construction alone does not satisfy the litmus test. Proprietary data and '
+             'useful networks may be harder to reproduce, but must still be assessed.',
+  'scene': 'A streaming firm’s proprietary viewing histories are valuable, rare and difficult to '
+           'copy. A rival’s interviews and experiments nevertheless produce equally effective '
+           'recommendations for its customers.',
+  'prompt': 'What does this challenge in the litmus test?',
+  'options': ['Rarity, because equivalent recommendations mean the rival owns the same viewing '
+              'histories.',
+              'Nonsubstitutability, because a different resource may deliver equivalent customer '
+              'value.',
+              'Value, because the original histories become useless whenever an alternative '
+              'approach exists.'],
+  'feedback': ['The rival does not need the same histories to reach a similar result. Rarity '
+               'concerns access to the resource itself.',
+               'Costly copying does not rule out achieving the same ends differently. An effective '
+               'alternative challenges sustainability through substitution.',
+               'The histories may remain useful. The issue is whether their value can sustain a '
+               'unique advantage when customers can obtain an equivalent result elsewhere.'],
   'key': 1,
-  'source': 'Session 3, slides 20, 23, 25; Tiwana, Chapter 2: Competitive Litmus Test; Applications and '
-            'Data.'},
+  'source': 'Session 3, slides 20, 23, 25; Tiwana, Chapter 2: Competitive Litmus Test; '
+            'Applications and Data. Applied situation is illustrative.'},
  {'block': 'Resource advantage',
-  'title': 'Resources become capabilities',
-  'concept': 'Skills, processes and decision rights connect resources to capabilities and customer value. '
-             'VRIO makes organization explicit; Tiwana’s litmus test uses VRIN.',
-  'scene': 'The Amazon Fresh illustration links data, automation and expertise to logistics and cold-chain '
-           'capabilities.',
-  'prompt': 'Which account completes the chain?',
-  'options': ['Organized resources enable coordinated logistics and cold-chain work, creating convenient '
-              'delivery and fresh groceries',
-              'Owning automation alone proves customer value',
-              'VRIO and VRIN have exactly the same final criterion'],
-  'feedback': ['The value comes through what the firm can do with its resources and the benefit customers '
-               'receive.',
-               'Ownership alone does not show effective use or delivery of the promise.',
-               'VRIN highlights non-substitutability; VRIO explicitly asks whether the organization can '
-               'exploit the resource.'],
+  'title': 'Resources that never become a capability',
+  'concept': 'Skills, processes and decision rights connect resources to capabilities and customer '
+             'value. VRIO makes organization explicit; Tiwana’s litmus test uses VRIN.',
+  'scene': 'A grocery service owns demand data, automation and specialist expertise. Inventory '
+           'planners and delivery managers work to conflicting priorities, causing late deliveries '
+           'and spoilage.',
+  'prompt': 'What best explains why the resources have not produced the intended customer value?',
+  'options': ['The resources need coordinated processes and decision rights to become a reliable '
+              'logistics capability; VRIO makes organization explicit.',
+              'The resources must be valueless because customer outcomes have not improved.',
+              'The missing condition is VRIN’s nonsubstitutability, which is identical to VRIO’s '
+              'organization criterion.'],
+  'feedback': ['Resources must be organized into effective work. Coordination can turn them into '
+               'capabilities; organization and nonsubstitutability are different criteria.',
+               'Poor use does not prove a resource has no potential value. Conflicting priorities '
+               'identify a barrier between resources and realised outcomes.',
+               'Nonsubstitutability tests equivalent alternatives; organization tests whether the '
+               'firm can use resources effectively. They are not interchangeable.'],
   'key': 0,
   'source': 'Session 3, slides 21, 24, 26; Tiwana, Chapter 2: Competitive Litmus Test; deck’s VRIO '
-            'extension.'}]
+            'extension. Applied situation is illustrative.'}]
 
-RETRY_HINTS = [
-    "Match the level of analysis to the question: industry, activities or a particular asset.",
-    "Consider what happens to selling prices and input costs when bargaining power increases.",
-    "Ask whether the alternative meets the same underlying need through a different method.",
-    "Consider both how buyers compare offers and how many alternatives suppliers gain.",
-    "Trace how price comparison affects customers and how renting capacity affects entrants.",
-    "Look for the mechanism that makes a network useful or a tailored system harder to replace.",
-    "Connect the IT proposal to costs and customer benefits within and between activities.",
-    "Ask whether the change happens inside one activity or coordinates two activities.",
-    "Distinguish collecting observations from using insight to change marketing decisions.",
-    "Separate the route to the customer from the physical nature of a printed book.",
-    "Ask what becomes possible when both the product and its delivery can be digital.",
-    "Assess operational value separately from rarity and defensibility.",
-    "Focus on reproducing the benefit of the resource, including alternative ways to achieve it.",
-    "Trace the chain from resources, through coordinated work, to the customer benefit."
-]
+RETRY_HINTS = ['Separate the industry question, the activity question and the resource question.',
+ 'Examine what firms can charge and what they must pay, rather than market size alone.',
+ 'Ask whether the alternative meets the underlying need differently and how its availability '
+ 'affects negotiations.',
+ 'Consider whose alternatives improve under each platform feature.',
+ 'Identify who gains negotiating alternatives and which investment a new entrant can avoid.',
+ 'Look for value gained from other participants and whether an alternative network can offer '
+ 'equivalent value.',
+ 'Follow the effect of one activity’s change on later activities and the customer outcome.',
+ 'Distinguish doing one step better from changing how several steps are coordinated.',
+ 'Trace how information changes whom marketing serves and what it offers them.',
+ 'Ask which activities disappear and which must still be performed by someone.',
+ 'Separate physical distribution from the other functions an intermediary may perform.',
+ 'Distinguish business value, competitive parity and sustained advantage.',
+ 'Separate reproducing the same asset from achieving the same outcome by another route.',
+ 'Trace the chain from resources through coordinated work to the customer result, and distinguish '
+ 'VRIN from VRIO.']
 
 STYLE = """
 <style>
@@ -370,7 +473,7 @@ def _render():
         st.markdown("**Concept reminders**")
         for term, definition in GLOSSARY.items():
             st.markdown(f"**{term}:** {definition}")
-        st.caption("The tutorial paraphrases the assigned readings; consult the course copies for the full arguments.")
+        st.caption("These illustrative revision situations apply concepts from the assigned readings; consult the course copies for the full arguments.")
 
 def render_session_03():
     _render()
@@ -378,3 +481,4 @@ def render_session_03():
 if __name__ == "__main__":
     st.set_page_config(page_title="ISM LAB · Session 3", page_icon="📘", layout="wide")
     render_session_03()
+
