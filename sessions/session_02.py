@@ -7,8 +7,8 @@ PREFIX = 'ism_s2'
 STAGE_KEY = 'ism_s2_stage'
 ANSWER_KEY = 'ism_s2_answers'
 TITLE = 'IT strategy: possibilities and choices'
-INTRO = ('Use the Trifecta, strategic positioning and synchronization to review Vandelay’s better-pump and uptime '
- 'alternatives.')
+INTRO = ('Apply the Trifecta, strategic positioning and synchronization to varied business situations. '
+ 'Weigh the alternatives and explain what would make the technology useful.')
 SUMMARY_TITLE = 'Your Strategic Configuration'
 TAKEAWAYS = ['The Trifecta creates possibilities; managers choose the target customers and promise.',
  'Offering, purchase and delivery can change independently.',
@@ -24,192 +24,278 @@ GLOSSARY = {'Digitization': 'Conversion of a previously physical offering or act
 READING = ('Primary sources: Session 2 teaching deck and Amrit Tiwana, IT Strategy for Non-IT Managers, Chapter 1. The '
  'deck adds the strategy triangle and competitive response discussion.')
 DECISIONS = [{'block': 'The Trifecta',
-  'title': 'Three drivers',
-  'concept': 'Digitization converts a previously physical offering or activity into electronic form. '
-             'Infusion embeds software. Ubiquity makes cheap, fast connectivity widely available.',
-  'scene': 'A pump has electronic service records, embedded diagnostics and a remote connection.',
-  'prompt': 'Which mapping separates the drivers correctly?',
-  'options': ['Records: digitization; diagnostics: infusion; connection: ubiquity',
-              'All three mean digitization',
-              'Records: ubiquity; connection: infusion'],
-  'feedback': ['Electronic records convert information into digital form (digitization); diagnostics embed software in the pump (infusion); the remote connection relies on widely available connectivity (ubiquity).',
-               'Electronic records, embedded behavior and connectivity are related but distinct.',
-               'Ubiquity concerns connectivity; infusion concerns software embedded in an offering or '
-               'activity.'],
+  'title': 'Connected does not mean one change',
+  'concept': 'Digitization converts a previously physical offering or activity into electronic '
+             'form. Infusion embeds software. Ubiquity makes cheap, fast connectivity widely '
+             'available.',
+  'scene': 'A dairy digitizes maintenance logs, adds software that adjusts refrigeration settings '
+           'and connects equipment across depots. A manager wants to evaluate all three through '
+           'one measure: the number of devices online.',
+  'prompt': 'Which evaluation best distinguishes the Trifecta’s contributions?',
+  'options': ['Assess usable digital records, software-controlled behavior and accessible '
+              'connectivity separately, then examine how they work together.',
+              'Prioritize connected-device counts because connectivity is the source of all three '
+              'changes.',
+              'Evaluate software accuracy alone because digitization and connectivity are '
+              'implementation details.'],
+  'feedback': ['The changes enable different capabilities. Their combination can matter, but '
+               'connected-device counts do not establish record usefulness or better equipment '
+               'behavior.',
+               'Connectivity enables exchange, but does not itself ensure meaningful digital '
+               'records or suitable embedded behavior.',
+               'Software behavior is one contribution. Ignoring records and connectivity misses '
+               'other conditions required for the combined use.'],
   'key': 0,
-  'source': 'Session 2, slides 6–7, 10–13; Tiwana, Chapter 1: The Trifecta.'},
+  'source': 'Session 2, slides 6–7, 10–13; Tiwana, Chapter 1: The Trifecta. Applied situation is '
+            'illustrative.'},
  {'block': 'The digitization cube',
-  'title': 'Printed book bought online',
-  'concept': 'The offering, purchase process and delivery are three separate dimensions. Each can be '
-             'physical or digital.',
-  'scene': 'A reader orders a printed book online and receives it by courier.',
-  'prompt': 'What is digital here?',
-  'options': ['The offering and delivery', 'The purchase process only', 'Every dimension'],
-  'feedback': ['The book and courier delivery remain physical.',
-               'Online purchase changes one dimension; the printed book and its delivery remain physical.',
-               'An online transaction does not digitize the physical book or courier delivery.'],
+  'title': 'Online purchase, physical bottleneck',
+  'concept': 'The offering, purchase process and delivery are three separate dimensions. Each can '
+             'be physical or digital.',
+  'scene': 'A furniture seller introduces online ordering. Customers still receive assembled '
+           'furniture by truck. Management expects delivery costs to become similar to downloading '
+           'software.',
+  'prompt': 'Which conclusion best applies the digitization cube?',
+  'options': ['The online transaction makes the complete offering digital, so the main remaining '
+              'issue is website capacity.',
+              'Purchasing is digital, while the offering and delivery remain physical; transport '
+              'economics still matter.',
+              'Delivery is digital because the order and tracking information reach the customer '
+              'electronically.'],
+  'feedback': ['The ordering channel changes the purchase dimension. Furniture still needs '
+               'physical production and transport.',
+               'The three dimensions change independently. Online ordering may improve '
+               'coordination, but does not remove physical delivery costs.',
+               'Tracking information is digitally transmitted, but the customer receives the '
+               'furniture by truck. Information about delivery is different from delivery of the '
+               'offering.'],
   'key': 1,
-  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization.'},
+  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization. Applied situation is '
+            'illustrative.'},
  {'block': 'The digitization cube',
-  'title': 'Software and movies',
+  'title': 'A new delivery route',
   'concept': 'An offering can be digital even when its delivery uses a physical carrier.',
-  'scene': 'Software once arrived on a disc; the same kind of software can now be downloaded.',
-  'prompt': 'Which dimension changes in this comparison?',
-  'options': ['The offering changes from physical to digital',
-              'Only the target market changes',
-              'Delivery changes from physical to digital'],
-  'feedback': ['The software content was already digital on the disc.',
-               'The described change concerns delivery, regardless of the target market.',
-               'Digital content moves from a physical carrier to transmission over a network.'],
+  'scene': 'A training firm sells identical course videos through online payment. It replaces '
+           'mailed USB drives with downloads. Management credits the change with digitizing the '
+           'course content.',
+  'prompt': 'Which interpretation is most precise?',
+  'options': ['The offering became digital when the USB drive was removed.',
+              'Only purchasing changed, because customers now interact with the website.',
+              'The content was already digital; delivery changed from a physical carrier to '
+              'network transmission.'],
+  'feedback': ['Video files on a USB drive were already digital content. The carrier was physical.',
+               'Payment was online in both versions. The changed step is how the content reaches '
+               'the customer.',
+               'An offering can be digital before its delivery becomes digital. Removing the '
+               'physical carrier changes delivery, with possible cost and access implications.'],
   'key': 2,
-  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization.'},
+  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization. Applied situation is '
+            'illustrative.'},
  {'block': 'The digitization cube',
-  'title': 'Streaming a movie',
-  'concept': 'A digitized offering follows the economics of information: reproduction and transmission can '
-             'have near-zero marginal costs.',
-  'scene': 'A customer purchases access online and streams a movie.',
-  'prompt': 'How would you classify the three dimensions?',
-  'options': ['Digital offering, digital purchase, digital delivery',
-              'Physical offering, digital purchase, physical delivery',
-              'Digital delivery means the entire business has zero costs'],
-  'feedback': ['The content, transaction and transmission are digital in this example.',
-               'That describes a physical item ordered online, not streamed content.',
-               'Near-zero reproduction costs do not eliminate content creation, infrastructure or other '
-               'business costs.'],
+  'title': 'Low reproduction cost, high investment',
+  'concept': 'A digitized offering follows the economics of information: reproduction and '
+             'transmission can have near-zero marginal costs.',
+  'scene': 'An education firm spends heavily producing an online course. Serving one additional '
+           'learner has a low incremental distribution cost, but support, platform operation and '
+           'content updates remain costly.',
+  'prompt': 'What follows from the economics of a digitized offering?',
+  'options': ['Low incremental distribution cost can support scale, but profitability still '
+              'depends on recovering other costs and attracting paying learners.',
+              'Low distribution cost means the course should be priced close to zero regardless of '
+              'development costs.',
+              'The high initial investment prevents the firm from benefiting from digital '
+              'reproduction.'],
+  'feedback': ['Reproducing digital content can be inexpensive without making the entire business '
+               'inexpensive. Demand, pricing and other costs still determine viability.',
+               'Marginal distribution cost alone does not determine a viable price or eliminate '
+               'fixed and ongoing costs.',
+               'High initial investment and low reproduction cost can coexist. Scale may help '
+               'recover the investment, although it does not guarantee profit.'],
   'key': 0,
-  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization.'},
+  'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization. Applied situation is '
+            'illustrative.'},
  {'block': 'The Trifecta',
-  'title': 'Infusion and services',
-  'concept': 'Infusion can make products more software-like and enable ongoing services. It does not force '
-             'every firm to use a service model.',
-  'scene': 'The deck discusses Tesla updates and Rolls-Royce engine services.',
-  'prompt': 'What is the shared managerial implication?',
-  'options': ['Software always removes the physical product',
-              'Software can change functions after sale and support an ongoing service promise',
-              'Connectivity alone guarantees recurring revenue'],
-  'feedback': ['Cars and engines remain physical; software changes their behavior and use.',
-               'Updates and ongoing service are possibilities enabled by software infusion. The business '
-               'still needs a valuable customer promise.',
-               'Recurring revenue requires an offer customers value and the ability to deliver it.'],
+  'title': 'Software after the sale',
+  'concept': 'Infusion can make products more software-like and enable ongoing services. It does '
+             'not force every firm to use a service model.',
+  'scene': 'A machine maker can improve energy efficiency through software updates after '
+           'installation. It is considering a subscription but has not established whether '
+           'customers value ongoing updates.',
+  'prompt': 'Which strategic conclusion is justified?',
+  'options': ['Introduce a subscription immediately because embedded software makes recurring '
+              'revenue the appropriate model.',
+              'Infusion enables changing functionality after sale; the firm must still choose a '
+              'valuable promise and a workable revenue model.',
+              'Treat updates only as internal maintenance because the machine remains a physical '
+              'product.'],
+  'feedback': ['Infusion creates possibilities, but customer value and service economics must '
+               'justify the chosen model.',
+               'Software can make a physical offering adaptable after sale. That capability does '
+               'not determine what customers will pay for or how the firm should charge.',
+               'The physical machine can remain the offering while software changes its customer '
+               'benefit. Physical form does not prevent ongoing services.'],
   'key': 1,
-  'source': 'Session 2, slides 10–11; Tiwana, Chapter 1: Infusion.'},
+  'source': 'Session 2, slides 10–11; Tiwana, Chapter 1: Infusion. Applied situation is '
+            'illustrative.'},
  {'block': 'Apply the Trifecta',
-  'title': 'Two Vandelay offers',
+  'title': 'One technology, two strategies',
   'concept': 'Technology opens possibilities; strategic choices determine how a firm uses them.',
-  'scene': 'Both better pumps and an uptime promise can use records, diagnostics and remote connectivity.',
-  'prompt': 'Which conclusion follows?',
-  'options': ['Sensors prove uptime is always the best strategy',
-              'Better pumps cannot use the Trifecta',
-              'Either offer can use the Trifecta, with different purposes'],
-  'feedback': ['Sensors make monitoring possible but do not decide whom to serve or what promise to make.',
-               'Field records, software controls and connectivity can improve pump performance too.',
-               'For better pumps the emphasis is product improvement; for uptime it is early warning and '
-               'coordinated intervention.'],
+  'scene': 'A refrigeration company has digital operating records, embedded diagnostics and remote '
+           'connectivity. It could improve equipment efficiency or promise fewer disruptions '
+           'through ongoing monitoring and intervention.',
+  'prompt': 'What should guide the choice between these offers?',
+  'options': ['Choose the ongoing service because connected products naturally require '
+              'subscription strategies.',
+              'Choose equipment improvement because the existing product category fixes the '
+              'appropriate strategy.',
+              'Compare target customers, the benefits they value and the organization’s ability to '
+              'deliver each promise.'],
+  'feedback': ['Connectivity enables a service but does not establish that it is the preferred '
+               'customer promise.',
+               'Existing products influence capabilities, but do not by themselves rule out a '
+               'different service promise.',
+               'The Trifecta opens both possibilities. Strategic aspiration and coordinated '
+               'delivery determine how the technologies should be used.'],
   'key': 2,
-  'source': 'Session 2, slides 3, 14; Tiwana, Chapter 1: Confluence of the Trifecta.'},
+  'source': 'Session 2, slides 3, 14; Tiwana, Chapter 1: Confluence of the Trifecta. Applied '
+            'situation is illustrative.'},
  {'block': 'Strategic position',
-  'title': 'Whom and how',
-  'concept': 'Strategic aspiration combines target market scope with a basis of competition: lower cost or '
-             'differentiation.',
-  'scene': 'The deck places DMart, Asian Paints, OYO budget stays and Fabindia craft range in four teaching '
-           'positions.',
-  'prompt': 'Which mapping matches the deck?',
-  'options': ['DMart: broad low cost; Asian Paints: broad differentiation; OYO budget stays: cost focus; '
-              'Fabindia craft range: focused differentiation',
-              'Every firm follows differentiation focus',
-              'A website makes every firm a broad low-cost competitor'],
-  'feedback': ['DMart pairs a broad market with low cost; Asian Paints pairs a broad market with differentiation. OYO budget stays focuses on price-conscious customers; Fabindia’s craft range focuses on customers valuing distinctive craft products. These are teaching positions, not claims about every business '
-               'line.',
-               'The examples deliberately distinguish scope and basis of competition.',
-               'Digital access does not determine either strategic dimension.'],
+  'title': 'Low price is not a broad market',
+  'concept': 'Strategic aspiration combines target market scope with a basis of competition: lower '
+             'cost or differentiation.',
+  'scene': 'A travel service serves only small-town college groups seeking economical excursions. '
+           'Its standard itineraries and shared booking process aim to deliver trips at lower cost '
+           'than comparable providers.',
+  'prompt': 'Which strategic aspiration fits this description?',
+  'options': ['Cost focus: compete on lower cost within a selected segment.',
+              'Broad low cost: economical pricing means the target market is broad.',
+              'Focused differentiation: serving a narrow segment is sufficient evidence of '
+              'differentiation.'],
+  'feedback': ['The customer scope is narrow and the described basis of competition is lower cost. '
+               'These are separate axes.',
+               'Low cost describes the basis of competition, not the breadth of the target market.',
+               'A narrow segment establishes focus, but not differentiation. The stated operating '
+               'choices aim at lower cost.'],
   'key': 0,
-  'source': 'Session 2, slides 16–17; Tiwana, Chapter 1: Strategic aspiration.'},
+  'source': 'Session 2, slides 16–17; Tiwana, Chapter 1: Strategic aspiration. Applied situation '
+            'is illustrative.'},
  {'block': 'Strategic position',
-  'title': 'Aspiration and execution',
-  'concept': 'Aspiration identifies the position sought. Business choices explain the customer promise and '
-             'how the firm competes in that position.',
-  'scene': 'Vandelay considers high availability for plants where downtime is costly.',
-  'prompt': 'Which statement describes the position rather than its execution?',
-  'options': ['Install telemetry and maintain technician response commitments',
-              'Pursue focused differentiation for plants that value high availability',
-              'Buy the newest diagnostic package'],
-  'feedback': ['These are operational and IS choices needed to deliver the promise.',
-               'This specifies the target segment and differentiated value.',
-               'A technology purchase alone does not identify the strategic position.'],
+  'title': 'Position versus implementation',
+  'concept': 'Aspiration identifies the position sought. Business choices explain the customer '
+             'promise and how the firm competes in that position.',
+  'scene': 'A diagnostic service proposes priority appointments for customers who value rapid '
+           'results. Its team lists three statements for the strategy discussion.',
+  'prompt': 'Which statement most directly expresses strategic aspiration?',
+  'options': ['Build an appointment system with priority routing and alerts.',
+              'Pursue focused differentiation for customers who value rapid diagnostic results.',
+              'Reorganize staff shifts to reserve capacity for urgent appointments.'],
+  'feedback': ['This describes an IS choice that could support the position, but does not itself '
+               'state whom to serve and how to compete.',
+               'This identifies both the target segment and the differentiated benefit sought.',
+               'This is an organizational choice to deliver the promise. It follows from, rather '
+               'than defines, the position.'],
   'key': 1,
-  'source': 'Session 2, slides 17, 21; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not Alignment.'},
+  'source': 'Session 2, slides 17, 21; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not '
+            'Alignment. Applied situation is illustrative.'},
  {'block': 'Make the fit',
-  'title': 'Better pump configuration',
+  'title': 'A premium promise, a volume metric',
   'concept': 'Organizational and IS choices should support the business promise.',
-  'scene': 'Vandelay chooses broad differentiation through efficient, longer-lasting pumps.',
-  'prompt': 'Which configuration fits the deck?',
-  'options': ['Alerts alone, with no engineering feedback',
-              'A booking platform for budget rooms',
-              'Engineers prioritize performance; design and test data connect to field failures'],
-  'feedback': ['Alerts may help, but this configuration omits the product improvement process.',
-               'That supports a different business and customer promise.',
-               'Engineering priorities and linked evidence support better pump design.'],
+  'scene': 'An appliance manufacturer seeks differentiation through durable products. It collects '
+           'field failure data, but engineers are rewarded only for releasing more models each '
+           'year.',
+  'prompt': 'Which configuration best supports the chosen promise?',
+  'options': ['Improve the failure dashboard while retaining release-volume incentives.',
+              'Increase release volume and use customer communication to emphasize durability.',
+              'Connect field failures to design reviews and evaluate engineering priorities '
+              'against durability outcomes.'],
+  'feedback': ['Better information may help, but incentives and review routines still pull '
+               'decisions away from the promise.',
+               'More releases and stronger messaging do not establish that products will last '
+               'longer.',
+               'IS evidence and organizational priorities must reinforce the same customer '
+               'promise. Linking failure learning to design decisions creates that fit.'],
   'key': 2,
-  'source': 'Session 2, slides 19–21; Tiwana, Chapter 1: Syncing, Not Alignment.'},
+  'source': 'Session 2, slides 19–21; Tiwana, Chapter 1: Syncing, Not Alignment. Applied situation '
+            'is illustrative.'},
  {'block': 'Make the fit',
-  'title': 'Uptime configuration',
+  'title': 'Detection without intervention',
   'concept': 'An uptime promise needs a response capability, not just observation.',
-  'scene': 'Vandelay detects faults remotely, but parts and technicians are unavailable.',
-  'prompt': 'What is the main gap?',
-  'options': ['Organizational arrangements do not support the IS-enabled promise',
-              'It must stop collecting data',
-              'Having sensors already completes the strategy'],
-  'feedback': ['Monitoring must connect to early intervention, available parts and clear response '
-               'responsibilities.',
-               'Data remain useful; the response arrangements need attention.',
-               'Sensors detect conditions but cannot themselves fulfill service commitments.'],
+  'scene': 'A cold-chain provider promises continuity of refrigeration. Its system detects '
+           'temperature risks quickly, but local managers cannot authorize emergency technicians '
+           'without next-day approval.',
+  'prompt': 'Which response best repairs the mismatch?',
+  'options': ['Agree on safe escalation authority and response capacity, and connect alerts to '
+              'that process.',
+              'Invest in more sensitive sensors so alerts arrive earlier.',
+              'Narrow alert thresholds so fewer incidents require managerial action.'],
+  'feedback': ['The detected risk needs an authorized response. Decision rights and operational '
+               'capacity must support the IS-enabled promise.',
+               'Earlier detection may help, but does not remove the approval bottleneck preventing '
+               'intervention.',
+               'Reducing alerts can hide risks without improving response. Threshold changes need '
+               'evidence and do not resolve the stated authority gap.'],
   'key': 0,
-  'source': 'Session 2, slides 19–21; Tiwana, Chapter 1: Syncing, Not Alignment.'},
+  'source': 'Session 2, slides 19–21; Tiwana, Chapter 1: Syncing, Not Alignment. Applied situation '
+            'is illustrative.'},
  {'block': 'Make the fit',
-  'title': 'Continuous synchronization',
-  'concept': 'Tiwana describes syncing as an ongoing, two-way relationship between operational and IT '
-             'strategy, guided by strategic aspiration.',
-  'scene': 'Customer requirements change after an uptime service launches.',
-  'prompt': 'What should managers do?',
-  'options': ['Freeze the original processes and system design',
-              'Adapt service processes and IT together as the promise evolves',
-              'Let the vendor decide the target customer segment'],
-  'feedback': ['A one-time fit can deteriorate as conditions change.',
-               'Both strategies evolve; managers continuously repair mismatches while pursuing the chosen '
-               'position.',
-               'Managers must own the competitive choices, even when vendors support implementation.'],
+  'title': 'Synchronization goes both ways',
+  'concept': 'Tiwana describes syncing as an ongoing, two-way relationship between operational and '
+             'IT strategy, guided by strategic aspiration.',
+  'scene': 'A retailer’s new inventory technology enables frequent small replenishments. Buyers '
+           'still place large monthly orders, while customers increasingly expect fresh '
+           'assortment. The retailer intends to retain that customer promise.',
+  'prompt': 'What best reflects continuous synchronization?',
+  'options': ['Finalize the technology and require operations to adapt once at launch.',
+              'Review replenishment routines and IS rules together as capabilities and customer '
+              'needs evolve.',
+              'Preserve buying routines and restrict the system to automating the old ordering '
+              'cycle.'],
+  'feedback': ['A one-time adjustment may become obsolete. Syncing continues as operational needs '
+               'and technology possibilities change.',
+               'Syncing is an ongoing, two-way relationship guided by strategic aspiration. Both '
+               'operating choices and IS design may need revision.',
+               'Automating the existing cycle may preserve a mismatch with the customer promise '
+               'and fail to exploit the new capability.'],
   'key': 1,
-  'source': 'Session 2, slides 19–21, 24–26; Tiwana, Chapter 1: Syncing, Not Alignment.'},
+  'source': 'Session 2, slides 19–21, 24–26; Tiwana, Chapter 1: Syncing, Not Alignment. Applied '
+            'situation is illustrative.'},
  {'block': 'Competitive response',
-  'title': 'Imitation and cannibalization',
-  'concept': 'Rivals can copy visible technology. New offers may also reduce revenue from the current '
-             'business.',
-  'scene': 'Rivals add sensors and contracts; Vandelay’s uptime service may reduce repair jobs.',
-  'prompt': 'Which response best follows the session?',
-  'options': ['Assume the technology protects the position forever',
-              'Judge the service only by lost repair revenue',
-              'Review customer value, coordinated delivery and the revenue trade-off'],
-  'feedback': ['Imitation can erode advantage; buying sensors provides no permanent protection.',
-               'Lost repair revenue is relevant, but so are the ongoing service promise and its economics.',
-               'The deck asks managers to consider imitation, execution and cannibalization together, '
-               'without assuming one offer must win.'],
+  'title': 'Protect today’s revenue or renew the offer?',
+  'concept': 'Rivals can copy visible technology. New offers may also reduce revenue from the '
+             'current business.',
+  'scene': 'A maintenance firm’s remote prevention service may reduce profitable emergency visits. '
+           'Rivals can buy similar monitoring software. Managers disagree about whether to launch '
+           'the service.',
+  'prompt': 'Which assessment best addresses both competitive pressures?',
+  'options': ['Reject the service because any loss of emergency revenue destroys value.',
+              'Launch quickly and rely on the monitoring software to prevent imitation.',
+              'Evaluate the total customer and revenue effects, delivery capabilities and how the '
+              'offer must evolve as rivals respond.'],
+  'feedback': ['Lost emergency revenue is relevant, but customers may value prevention and pay '
+               'differently. The total economics and future competitive position need assessment.',
+               'Readily available software is unlikely to protect the offer by itself. Execution '
+               'and continued adaptation matter.',
+               'The choice involves cannibalization, imitation and delivery. Neither current '
+               'revenue protection nor technology ownership alone resolves these trade-offs.'],
   'key': 2,
-  'source': 'Session 2, slides 23–26; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not Alignment.'}]
+  'source': 'Session 2, slides 23–26; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not '
+            'Alignment. Applied situation is illustrative.'}]
 
-RETRY_HINTS = [
-    "Separate the electronic record, the software inside the pump and the availability of connectivity.",
-    "Trace the content, the ordering step and the way the customer receives the item separately.",
-    "Distinguish the software content from the medium used to carry it.",
-    "Classify the content, transaction and transmission separately; distinguish marginal costs from total business costs.",
-    "Think about what embedded software enables after the physical product has been sold.",
-    "Ask how the same technologies could serve two different customer promises.",
-    "Use two axes: broad versus focused customers, and low cost versus differentiation.",
-    "Look for a statement that identifies both whom to serve and how to compete.",
-    "Work backward from efficient, longer-lasting pumps to the engineering decisions and evidence needed.",
-    "Ask what must happen after a fault is detected to keep the customer’s plant running.",
-    "Consider whether changing customer needs also require changes to processes and systems.",
-    "Consider customer benefits, competitors’ responses and the economics of the new offer together."
-]
+RETRY_HINTS = ['Distinguish converting information, embedding software and making connections widely available.',
+ 'Trace what is bought, how it is purchased and how the item itself reaches the customer.',
+ 'Separate the content from its carrier and compare only the dimensions that changed.',
+ 'Distinguish the cost of one additional copy from the costs of creating and operating the '
+ 'offering.',
+ 'Separate the technology’s possibility from the business model chosen to use it.',
+ 'Ask whom the firm intends to serve and what it can credibly promise them.',
+ 'Assess target market scope and the basis of competition independently.',
+ 'Look for both a selected customer group and a basis of competition, rather than a delivery '
+ 'mechanism.',
+ 'Trace whether the information, work routines and incentives all support durability.',
+ 'Follow what must happen after an alert for the promised continuity to be delivered.',
+ 'Consider how changes in technology and business needs can each trigger changes in the other.',
+ 'Consider the whole offer’s economics and the ability to keep creating value when competitors '
+ 'respond.']
 
 STYLE = """
 <style>
@@ -325,7 +411,7 @@ def _render():
         st.markdown("**Concept reminders**")
         for term, definition in GLOSSARY.items():
             st.markdown(f"**{term}:** {definition}")
-        st.caption("The tutorial paraphrases the assigned readings; consult the course copies for the full arguments.")
+        st.caption("These illustrative revision situations apply concepts from the assigned readings; consult the course copies for the full arguments.")
 
 def render_session_02():
     _render()
@@ -333,3 +419,4 @@ def render_session_02():
 if __name__ == "__main__":
     st.set_page_config(page_title="ISM LAB · Session 2", page_icon="📘", layout="wide")
     render_session_02()
+
