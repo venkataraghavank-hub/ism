@@ -64,6 +64,22 @@ DECISIONS = [
 ]
 
 
+# Concept-specific nudges help students retry without changing the questions.
+RETRY_HINTS = [
+    "Start with the business outcome, then ask how technology and changed work would produce it.",
+    "Think about the arrangements that make departments use the same records and follow agreed decisions.",
+    "Look for a shared technical foundation that supports many applications.",
+    "Distinguish dependable routine work from a distinctive customer promise.",
+    "Ask which action fixes the meaning, quality and ownership of the records.",
+    "Consider what each asset enables and what its manager must prioritise.",
+    "Look for a tool that helps an individual experiment and perform a task more precisely.",
+    "Think about how knowledge can travel between people through contributions and participation.",
+    "Look for a common transaction process across departments, supported by agreed data and roles.",
+    "Separate what the tool enables from the changes needed for people to use that capability.",
+    "Consider who owns adoption and business outcomes after installation."
+]
+
+
 def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
@@ -90,18 +106,26 @@ def render_session_01() -> None:
             if widget_key not in st.session_state and stage in st.session_state["ism_s1_answers"]:
                 st.session_state[widget_key] = st.session_state["ism_s1_answers"][stage]
             selection = st.radio("Your call", item["options"], index=None, key=widget_key)
+            is_correct = False
             if selection is not None:
-                st.session_state["ism_s1_answers"][stage] = selection
                 idx = item["options"].index(selection)
-                st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
-                st.caption("You can choose another option to compare its implications. There are no marks.")
+                is_correct = idx == item["key"]
+                if is_correct:
+                    st.session_state["ism_s1_answers"][stage] = selection
+                    st.success("Correct — " + item["feedback"][idx])
+                    st.caption("You can now continue. There are no marks.")
+                else:
+                    st.session_state["ism_s1_answers"].pop(stage, None)
+                    st.warning("Not quite — " + item["feedback"][idx])
+                    st.info("Hint: " + RETRY_HINTS[stage])
+                    st.caption("Try again: select another answer above.")
         left, _, right = st.columns([1.2, 3, 1.5])
         with left:
             if stage and st.button("← Previous", use_container_width=True):
                 go_to(stage - 1)
         with right:
             label = "View summary →" if stage == count - 1 else "Continue →"
-            if st.button(label, type="primary", disabled=selection is None, use_container_width=True):
+            if st.button(label, type="primary", disabled=not is_correct, use_container_width=True):
                 go_to(stage + 1)
     else:
         st.progress(1.0, text=f"{count} of {count} decisions complete · Summary")
@@ -121,10 +145,12 @@ def render_session_01() -> None:
 def render_summary() -> None:
     count = len(DECISIONS)
     answers = st.session_state.get("ism_s1_answers", {})
-    if any(i not in answers for i in range(count)):
+    unfinished = [i for i, item in enumerate(DECISIONS)
+                  if answers.get(i) != item["options"][item["key"]]]
+    if unfinished:
         st.warning("Some decisions are unfinished. Return to them before viewing your configuration.")
         if st.button("Return to first unfinished decision"):
-            go_to(next(i for i in range(count) if i not in answers))
+            go_to(unfinished[0])
         return
     st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · SUMMARY</div><h1>From technology purchase to business value</h1><p>Your choices show where the manager must look beyond the product.</p></div>', unsafe_allow_html=True)
     with st.container(border=True):
