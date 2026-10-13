@@ -32,7 +32,7 @@ DECISIONS = [{'block': 'The Trifecta',
   'options': ['Records: digitization; diagnostics: infusion; connection: ubiquity',
               'All three mean digitization',
               'Records: ubiquity; connection: infusion'],
-  'feedback': ['Each driver has a distinct role, although they often work together.',
+  'feedback': ['Electronic records convert information into digital form (digitization); diagnostics embed software in the pump (infusion); the remote connection relies on widely available connectivity (ubiquity).',
                'Electronic records, embedded behavior and connectivity are related but distinct.',
                'Ubiquity concerns connectivity; infusion concerns software embedded in an offering or '
                'activity.'],
@@ -118,7 +118,7 @@ DECISIONS = [{'block': 'The Trifecta',
               'Fabindia craft range: focused differentiation',
               'Every firm follows differentiation focus',
               'A website makes every firm a broad low-cost competitor'],
-  'feedback': ['These are the positions used in the session illustrations, not claims about every business '
+  'feedback': ['DMart pairs a broad market with low cost; Asian Paints pairs a broad market with differentiation. OYO budget stays focuses on price-conscious customers; Fabindia’s craft range focuses on customers valuing distinctive craft products. These are teaching positions, not claims about every business '
                'line.',
                'The examples deliberately distinguish scope and basis of competition.',
                'Digital access does not determine either strategic dimension.'],
@@ -195,6 +195,21 @@ DECISIONS = [{'block': 'The Trifecta',
                'without assuming one offer must win.'],
   'key': 2,
   'source': 'Session 2, slides 23–26; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not Alignment.'}]
+
+RETRY_HINTS = [
+    "Separate the electronic record, the software inside the pump and the availability of connectivity.",
+    "Trace the content, the ordering step and the way the customer receives the item separately.",
+    "Distinguish the software content from the medium used to carry it.",
+    "Classify the content, transaction and transmission separately; distinguish marginal costs from total business costs.",
+    "Think about what embedded software enables after the physical product has been sold.",
+    "Ask how the same technologies could serve two different customer promises.",
+    "Use two axes: broad versus focused customers, and low cost versus differentiation.",
+    "Look for a statement that identifies both whom to serve and how to compete.",
+    "Work backward from efficient, longer-lasting pumps to the engineering decisions and evidence needed.",
+    "Ask what must happen after a fault is detected to keep the customer’s plant running.",
+    "Consider whether changing customer needs also require changes to processes and systems.",
+    "Consider customer benefits, competitors’ responses and the economics of the new offer together."
+]
 
 STYLE = """
 <style>
@@ -279,17 +294,25 @@ def _render():
             if widget_key not in st.session_state and stored is not None:
                 st.session_state[widget_key] = stored
             choice = st.radio("Your call", item['options'], index=None, key=widget_key)
+            is_correct = False
             if choice is not None:
-                st.session_state[ANSWER_KEY][stage] = choice
                 idx = item['options'].index(choice)
-                st.markdown(f'<div class="debrief"><strong>What your choice means</strong><br>{esc(item["feedback"][idx])}</div>', unsafe_allow_html=True)
-                st.caption("There are no marks. Choose another option to compare the reasoning.")
+                is_correct = idx == item['key']
+                if is_correct:
+                    st.session_state[ANSWER_KEY][stage] = choice
+                    st.success("Correct — " + item['feedback'][idx])
+                    st.caption("You can now continue. There are no marks.")
+                else:
+                    st.session_state[ANSWER_KEY].pop(stage, None)
+                    st.warning("Not quite — " + item['feedback'][idx])
+                    st.info("Hint: " + RETRY_HINTS[stage])
+                    st.caption("Try again: select another answer above.")
         left, right = st.columns(2)
         with left:
             if st.button("Previous", disabled=stage==0, key=f"{PREFIX}_previous", use_container_width=True):
                 _go(stage-1)
         with right:
-            if st.button("View summary" if stage==count-1 else "Continue", disabled=choice is None, key=f"{PREFIX}_next", type="primary", use_container_width=True):
+            if st.button("View summary" if stage==count-1 else "Continue", disabled=not is_correct, key=f"{PREFIX}_next", type="primary", use_container_width=True):
                 _go(stage+1)
     with st.expander("Concept map and reading trail"):
         st.markdown("""\n| Lens | Question | Course reading |
