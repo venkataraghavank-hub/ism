@@ -301,50 +301,46 @@ def render_summary() -> None:
     unfinished = [i for i, item in enumerate(DECISIONS)
                   if answers.get(i) != item["options"][item["key"]]]
     if unfinished:
-        st.warning("Some decisions are unfinished. Return to them before viewing your configuration.")
-        if st.button("Return to first unfinished decision"):
+        st.warning("Some decisions are unfinished. Complete them to view your review.")
+        if st.button("Return to first unfinished decision", key="ism_s1_unfinished"):
             go_to(unfinished[0])
         return
-    st.markdown('<div class="hero"><div class="eyebrow">SESSION 01 · SUMMARY</div><h1>From technology purchase to business value</h1><p>Your choices show where the manager must look beyond the product.</p></div>', unsafe_allow_html=True)
-    with st.container(border=True):
-        st.markdown("### What to take into the next session")
-        st.markdown("""
-1. **Red Queen → value anchor.** Rivalry pressures firms to invest; begin with the business outcome.
-2. **Information system → working arrangement.** Technology, data, people and processes must fit together.
-3. **Criterion 1 → portfolio.** Infrastructure provides a shared foundation; applications perform work; data provide usable records. Operational and strategic applications serve different purposes.
-4. **Criterion 2 → three worlds.** Function IT aids individual tasks; network IT connects contributors; enterprise IT coordinates a common process.
-5. **CCR → managerial action.** Name the capability, build the complements and assign responsibility for adoption and value.
-""")
-    with st.container(border=True):
-        st.markdown("### Your Configuration")
-        picks = [DECISIONS[i]["options"].index(answers[i]) for i in range(count)]
-        for heading, indices in [
-            ("The business problem", (0, 1)), ("The portfolio", (2, 3, 4, 5)),
-            ("The three worlds", (6, 7, 8)), ("CCR", (9, 10)),
-        ]:
-            with st.expander(heading):
-                for i in indices:
-                    item = DECISIONS[i]
-                    st.markdown(f"**{item['title']}:** {item['options'][picks[i]]}")
-                    st.caption(item["feedback"][picks[i]])
-        portfolio = sum(picks[i] == DECISIONS[i]["key"] for i in (2, 3, 4, 5))
-        worlds = sum(picks[i] == DECISIONS[i]["key"] for i in (6, 7, 8))
-        ccr = sum(picks[i] == DECISIONS[i]["key"] for i in (9, 10))
-        parts = ["You distinguished competitive parity from lasting advantage." if picks[0] == DECISIONS[0]["key"] else "Revisit competitive parity and the value of keeping pace.",
-                 "You connected technology with people, process and data." if picks[1] == DECISIONS[1]["key"] else "Revisit what makes a software purchase a working information system.",
-                 "Your portfolio distinctions are clear." if portfolio == 4 else "Compare the portfolio examples again.",
-                 "You distinguished the three IT worlds." if worlds == 3 else "Compare function, network and enterprise IT again.",
-                 "Your CCR choices link capabilities, complements and ownership." if ccr == 2 else "Revisit capabilities, complements and managerial responsibility.",
-                 "Try another option to explore the implications."]
-        debrief = " ".join(parts)
-        assert len(debrief.split()) <= 50
-        st.markdown(f'<div class="debrief"><strong>Debrief</strong><br>{esc(debrief)}</div>', unsafe_allow_html=True)
-    a, b, _ = st.columns([1.3, 1.1, 2])
-    with a:
-        if st.button("← Review decisions", use_container_width=True):
+    st.markdown("### Your Configuration")
+    st.write("Review the concepts and compare your decisions with the reasoning from the session.")
+    for heading, indices in [
+        ("The business problem", (0, 1)), ("The portfolio", (2, 3, 4, 5)),
+        ("The three worlds", (6, 7, 8)), ("CCR", (9, 10)),
+    ]:
+        with st.expander(heading, expanded=False):
+            for i in indices:
+                item = DECISIONS[i]
+                idx = item["options"].index(answers[i])
+                st.markdown(f"**{item['title']}**")
+                st.write(f"Your choice: {answers[i]}")
+                st.info(item["feedback"][idx])
+                if st.button("Revisit this decision", key=f"ism_s1_review_{i}"):
+                    go_to(i)
+    note = (
+        "You distinguished competitive parity from advantage, connected technology with work, "
+        "and applied the portfolio, three worlds and CCR lenses. "
+        "Review another option to compare its reasoning and reinforce the concepts."
+    )
+    st.markdown(f'<div class="debrief"><strong>Your revision note</strong><br>{esc(note)}</div>', unsafe_allow_html=True)
+    st.markdown("### Concepts to retain")
+    for takeaway in [
+        "**Red Queen → value anchor.** Rivalry pressures firms to invest; begin with the business outcome.",
+        "**Information system → working arrangement.** Technology, data, people and processes must fit together.",
+        "**Criterion 1 → portfolio.** Infrastructure provides a shared foundation; applications perform work; data provide usable records. Operational and strategic applications serve different purposes.",
+        "**Criterion 2 → three worlds.** Function IT aids individual tasks; network IT connects contributors; enterprise IT coordinates a common process.",
+        "**CCR → managerial action.** Name the capability, build the complements and assign responsibility for adoption and value.",
+    ]:
+        st.markdown(f"- {takeaway}")
+    left, right = st.columns(2)
+    with left:
+        if st.button("Review decisions", key="ism_s1_review_all", use_container_width=True):
             go_to(count - 1)
-    with b:
-        if st.button("Start again", use_container_width=True):
+    with right:
+        if st.button("Start again", key="ism_s1_restart", use_container_width=True):
             st.session_state["ism_s1_answers"] = {}
             for i in range(count):
                 st.session_state.pop(f"ism_s1_choice_{i}", None)
