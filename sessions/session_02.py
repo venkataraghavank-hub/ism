@@ -59,22 +59,23 @@ DECISIONS = [{'block': 'The Trifecta',
   'concept': 'The offering, purchase process and delivery are three separate dimensions. Each can '
              'be physical or digital.',
   'scene': 'A furniture seller introduces online ordering. Customers still receive assembled '
-           'furniture by truck. Management expects delivery costs to become similar to downloading '
-           'software.',
-  'prompt': 'Which conclusion best applies the digitization cube?',
-  'options': ['The online transaction makes the complete offering digital, so the main remaining '
-              'issue is website capacity.',
-              'Purchasing is digital, while the offering and delivery remain physical; transport '
-              'economics still matter.',
-              'Delivery is digital because the order and tracking information reach the customer '
-              'electronically.'],
-  'feedback': ['The ordering channel changes the purchase dimension. Furniture still needs '
-               'physical production and transport.',
-               'The three dimensions change independently. Online ordering may improve '
-               'coordination, but does not remove physical delivery costs.',
-               'Tracking information is digitally transmitted, but the customer receives the '
-               'furniture by truck. Information about delivery is different from delivery of the '
-               'offering.'],
+           'furniture by truck. Online orders are growing, but transport and handling costs per '
+           'delivery remain high.',
+  'prompt': 'How does the digitization cube help explain why delivery costs remain high?',
+  'options': ['The offering becomes digital when customers order online, so delivery costs should '
+              'mainly reflect website operations.',
+              'Purchasing is digital, while the offering and delivery remain physical; trucks, '
+              'handling and delivery routes still affect costs.',
+              'Delivery becomes digital when order confirmations and tracking updates reach '
+              'customers electronically.'],
+  'feedback': ['Online ordering digitizes the purchase process, not the furniture itself. Website '
+               'operations do not replace the physical activities required to deliver it.',
+               'The three dimensions can change independently. Online ordering may improve '
+               'coordination, but assembled furniture still needs physical handling and transport. '
+               'Digitizing purchasing alone does not remove those costs.',
+               'Order confirmations and tracking updates are digital information about delivery. '
+               'The furniture itself still reaches the customer by truck, so delivery of the '
+               'offering remains physical.'],
   'key': 1,
   'source': 'Session 2, slides 8–9; Tiwana, Chapter 1: Digitization. Applied situation is '
             'illustrative.'},
@@ -432,5 +433,6 @@ def render_session_02():
 if __name__ == "__main__":
     st.set_page_config(page_title="ISM LAB · Session 2", page_icon="📘", layout="wide")
     render_session_02()
+
 
 
