@@ -24,27 +24,33 @@ GLOSSARY = {'Digitization': 'Conversion of a previously physical offering or act
 READING = ('Primary sources: Session 2 teaching deck and Amrit Tiwana, IT Strategy for Non-IT Managers, Chapter 1. The '
  'deck adds the strategy triangle and competitive response discussion.')
 DECISIONS = [{'block': 'The Trifecta',
-  'title': 'Connected does not mean one change',
+  'title': 'Three changes, three different benefits',
   'concept': 'Digitization converts a previously physical offering or activity into electronic '
              'form. Infusion embeds software. Ubiquity makes cheap, fast connectivity widely '
              'available.',
-  'scene': 'A dairy digitizes maintenance logs, adds software that adjusts refrigeration settings '
-           'and connects equipment across depots. A manager wants to evaluate all three through '
-           'one measure: the number of devices online.',
-  'prompt': 'Which evaluation best distinguishes the Trifecta’s contributions?',
-  'options': ['Assess usable digital records, software-controlled behavior and accessible '
-              'connectivity separately, then examine how they work together.',
-              'Prioritize connected-device counts because connectivity is the source of all three '
-              'changes.',
-              'Evaluate software accuracy alone because digitization and connectivity are '
-              'implementation details.'],
-  'feedback': ['The changes enable different capabilities. Their combination can matter, but '
-               'connected-device counts do not establish record usefulness or better equipment '
-               'behavior.',
-               'Connectivity enables exchange, but does not itself ensure meaningful digital '
-               'records or suitable embedded behavior.',
-               'Software behavior is one contribution. Ignoring records and connectivity misses '
-               'other conditions required for the combined use.'],
+  'scene': 'A dairy makes three changes: it replaces paper maintenance logs with searchable '
+           'electronic records; installs software inside refrigeration units to adjust temperature '
+           'automatically; and uses affordable internet connections to let managers monitor units '
+           'at different depots. The manager reports only how many units are connected to the '
+           'internet.',
+  'prompt': 'Why is the number of connected units insufficient to judge the benefits of all three '
+            'changes?',
+  'options': ['It shows connectivity, but not whether staff can use the electronic records or '
+              'whether automatic temperature control works well.',
+              'It is sufficient: once a unit is connected, its electronic records and automatic '
+              'temperature control must also be working well.',
+              'It is insufficient only because the dairy needs to count the number of electronic '
+              'records as well.'],
+  'feedback': ['Connectivity supports remote monitoring (ubiquity). Searchable electronic records '
+               '(digitization) and software-controlled temperature adjustment (infusion) create '
+               'different possibilities. Their usefulness must also be checked; counting '
+               'connections alone does not establish it.',
+               'An internet connection does not guarantee usable records or effective '
+               'temperature-control software. These are distinct changes, even when they work '
+               'together.',
+               'Counting records adds a measure of volume, but does not show whether the records '
+               'help staff or whether embedded software improves temperature control. The manager '
+               'needs evidence about each change’s contribution.'],
   'key': 0,
   'source': 'Session 2, slides 6–7, 10–13; Tiwana, Chapter 1: The Trifecta. Applied situation is '
             'illustrative.'},
@@ -160,22 +166,27 @@ DECISIONS = [{'block': 'The Trifecta',
   'source': 'Session 2, slides 3, 14; Tiwana, Chapter 1: Confluence of the Trifecta. Applied '
             'situation is illustrative.'},
  {'block': 'Strategic position',
-  'title': 'Low price is not a broad market',
+  'title': 'A selected market and a lower-cost offer',
   'concept': 'Strategic aspiration combines target market scope with a basis of competition: lower '
              'cost or differentiation.',
-  'scene': 'A travel service serves only small-town college groups seeking economical excursions. '
-           'Its standard itineraries and shared booking process aim to deliver trips at lower cost '
-           'than comparable providers.',
-  'prompt': 'Which strategic aspiration fits this description?',
-  'options': ['Cost focus: compete on lower cost within a selected segment.',
-              'Broad low cost: economical pricing means the target market is broad.',
-              'Focused differentiation: serving a narrow segment is sufficient evidence of '
-              'differentiation.'],
-  'feedback': ['The customer scope is narrow and the described basis of competition is lower cost. '
-               'These are separate axes.',
-               'Low cost describes the basis of competition, not the breadth of the target market.',
-               'A narrow segment establishes focus, but not differentiation. The stated operating '
-               'choices aim at lower cost.'],
+  'scene': 'A travel company offers budget study tours only to college student groups. It uses '
+           'fixed itineraries and shared transport to keep its operating costs lower than those of '
+           'comparable tour providers. Its aim is to offer economical trips to this selected '
+           'customer group.',
+  'prompt': 'Which competitive position best describes this company?',
+  'options': ['Cost focus: serve a selected customer group through a lower-cost offer.',
+              'Broad low cost: serve many different customer groups through a lower-cost offer.',
+              'Focused differentiation: serve a selected customer group through distinctive '
+              'benefits rather than a lower-cost offer.'],
+  'feedback': ['The company focuses on college student groups, rather than the whole travel '
+               'market. Its fixed itineraries and shared transport support lower costs. A selected '
+               'segment plus a lower-cost basis of competition is cost focus.',
+               'The lower-cost part fits, but the broad-market part does not. The company serves '
+               'only college student groups; operating in several locations would not by itself '
+               'make its customer scope broad.',
+               'The selected-segment part fits, but the stated basis of competition is lower cost. '
+               'Serving a specific group alone does not establish differentiation; the scenario '
+               'emphasizes economical trips, rather than distinctive benefits.'],
   'key': 0,
   'source': 'Session 2, slides 16–17; Tiwana, Chapter 1: Strategic aspiration. Applied situation '
             'is illustrative.'},
@@ -281,14 +292,16 @@ DECISIONS = [{'block': 'The Trifecta',
   'source': 'Session 2, slides 23–26; Tiwana, Chapter 1: Strategic aspiration; Syncing, Not '
             'Alignment. Applied situation is illustrative.'}]
 
-RETRY_HINTS = ['Distinguish converting information, embedding software and making connections widely available.',
+RETRY_HINTS = ['Ask what each change lets people or equipment do. Which of those benefits does a connection '
+ 'count actually show?',
  'Trace what is bought, how it is purchased and how the item itself reaches the customer.',
  'Separate the content from its carrier and compare only the dimensions that changed.',
  'Distinguish the cost of one additional copy from the costs of creating and operating the '
  'offering.',
  'Separate the technology’s possibility from the business model chosen to use it.',
  'Ask whom the firm intends to serve and what it can credibly promise them.',
- 'Assess target market scope and the basis of competition independently.',
+ 'Make two separate choices: whom does the company serve, and does it compete mainly through lower '
+ 'cost or distinctive benefits?',
  'Look for both a selected customer group and a basis of competition, rather than a delivery '
  'mechanism.',
  'Trace whether the information, work routines and incentives all support durability.',
@@ -419,4 +432,5 @@ def render_session_02():
 if __name__ == "__main__":
     st.set_page_config(page_title="ISM LAB · Session 2", page_icon="📘", layout="wide")
     render_session_02()
+
 
